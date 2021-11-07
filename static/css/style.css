@@ -7,23 +7,59 @@
 }
 
 body {
-    background-color: black;
-    color: #fff;
-   position: absolute;
+    background-color: #fff;
+    color: #111;
+    scroll-behavior: auto;
+}
+
+header {
+    
+    width: 100vw;
 }
 
 .hero-image {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: fixed;
     height: 100vh;
     width: 100vw;
-    z-index: -6;
-}
+    z-index: -10;
 
 }
 
+.recipe-view {
+    position: relative;
+}
+
+.recipe-card {
+    width:70vw;
+    height: 70vh;
+    
+}
+
+
+
+.recipe-card-body {
+    width: 70w;
+    height: 68vh;
+    overflow: scroll;
+    font-size: 14px;
+}
+
+.recipe-card-img {
+    height: 7rem;
+    width: 7rem;
+}
+
+.recipe-card-header {
+    font-size: 1rem;
+}
+
+.register-card {
+    width: 70w;
+    height: 68vh;
+}
 .footer {
     position: fixed;
     left: 0;
@@ -33,3 +69,11 @@ body {
     color: white;
     text-align: center;
 }
+
+@media screen and (max-width: 320px) {
+    .card {
+        width: 100vw;
+        height: 100vh;
+        overflow: scroll;
+        
+    }

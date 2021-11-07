@@ -1,13 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
-
-<h3 class="text-center">Recipes</h3>
-
-    {% for recipes in recipes %}
-    {{recipes.recipe_name}}<br>
-    {{recipes.recipe_ingredients}}<br>
-    {{recipes.recipe_method}}<br>
-    {{recipes.category_name}}:<br>
-    {% endfor %}
-
+<section class="recipe-view">
+{% for recipes in recipes %}
+<h3 class="text-center pt-5">{{recipes.category_name}} Recipes</h3>
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-4 offset-md-1">
+            <div class="recipe-card card">
+                <div class="recipe-card-body card-body">
+                    <div class="recipe-card-header card-header">
+                        <img class="recipe-card-img card-img" src="../static/images/mackeral-hash.jpg" class="card-img-top" alt="Mackeral Hash">
+                         {{recipes.recipe_name}}</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{recipes.recipe_ingredients1}}</li>
+                        <li class="list-group-item">{{recipes.recipe_ingredients2}}</li>
+                        <li class="list-group-item">{{recipes.recipe_ingredients3}}</li>
+                        <li class="list-group-item">{{recipes.recipe_ingredients4}}</li>
+                        <li class="list-group-item">{{recipes.recipe_ingredients5}}</li>
+                    </ul>
+                    <div class="recipe-card-footer card-footer">{{recipes.recipe_method}}</div>
+                   <br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
 {% endblock %}

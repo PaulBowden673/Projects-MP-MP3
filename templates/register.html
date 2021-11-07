@@ -2,35 +2,34 @@
 {% block content %}
 
     <h3 class="text-center">Register</h3>
-<div class="container-fluid">
+<div class="container-fluid register-card">
     <div class="row">
         <div class="col-4 offset-md-4">
         <form class="" method="POST" action="{{ url_for('register') }}">
-            <div class="card" style="width: 25rem; height: 25rem;">
-               <div class="card-header">
-                <img src="../static/images/picture-1.jpg" class="card-img-top" alt="Baking">
+            <div class="card">
+               <div class="card-header text-center">
+               Sign Up To Our Site!
                </div> 
                 <div class="card-body">
                 <!-- username -->
                 <div class="row">
-					<div class="">
+					<div class="form-control">
 						<i class="fas fa-user-plus"></i>
-                        <label for="username" class="text-muted">Username</label>
-						<input id="username" name="username" type="text" class="validate">
+                        <label for="username" class="form-label text-muted"></label>
+						<input id="username" name="username" type="text" placeholder="Username" class="validate">
 						
 					</div>
                 </div>
                 <!-- password -->
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="form-control">
 						<i class="fas fa-user-lock"></i>
-                        <label for="password" class="text-muted">Password</label>
-                        <input id="password" name="password" type="password" class="validate">
+                        <label for="password" class="form-label text-muted"></label>
+                        <input id="password" name="password" type="password" placeholder="Password" class="validate">
                         
                     </div>
                 </div>
                 </div>
-
                 <!-- register -->
                 <div class="card-footer">
                 <div class="row">
