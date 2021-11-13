@@ -66,10 +66,7 @@ header {
     padding-left: 0;
     padding-right: 0;
 }
-.register-card {
-    width: 70w;
-    height: 68vh;
-}
+
 .footer {
     position: fixed;
     left: 0;
@@ -100,5 +97,25 @@ header {
 
 .recipe-card-header {
     text-align: center;
+}
+
+.register-view {
+    padding: 0;
+}
+
+.register-form {
+    padding: 1px;
+}
+.register-card {
+    width: 95vw;
+    height: 40vh;
+    padding: 2px;
+    offset: 0;
+}
+
+.register-footer {
+    padding: 1px;
+    margin-top: 5px;
+    width: 85vw;
 }
 }

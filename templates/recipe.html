@@ -2,13 +2,14 @@
 {% block content %}
 <section class="recipe-view">
     {% for recipes in recipes %}
-    <h3 class="text-center">{{recipes.category_name}} Recipes</h3>
+    <h3 class="text-center">Recipes</h3>
     <div class="container-fluid">
         <div class="row">
             <div class="col p-0 offset-md-1">
                 <div class="recipe-card card">
                     <div class="recipe-card-body card-body">
                         <div class="recipe-card-header card-header">
+                            <h5>{{recipes.category_name}}</h5>
                             <img class="recipe-card-img card-img" src="../static/images/mackeral-hash.jpg"
                                 class="card-img-top" alt="Mackeral Hash">
                             {{recipes.recipe_name}}</div>
