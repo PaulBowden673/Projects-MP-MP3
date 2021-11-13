@@ -27,35 +27,45 @@ header {
     z-index: -10;
 
 }
+.info-view {
+    position: relative;
+}
 
+.info-card {
+    width: 40vw;
+    height: 40vh;
+    
+}
 .recipe-view {
     position: relative;
 }
 
 .recipe-card {
-    width:70vw;
+    width: 80vw;
     height: 70vh;
     
 }
 
-
-
 .recipe-card-body {
-    width: 70w;
+    width: 80vw;
     height: 68vh;
-    overflow: scroll;
+    overflow: auto;
     font-size: 14px;
 }
 
 .recipe-card-img {
-    height: 7rem;
-    width: 7rem;
+    height: 5rem;
+    width: 5rem;
 }
 
 .recipe-card-header {
     font-size: 1rem;
 }
 
+.recipe-card-footer {
+    padding-left: 0;
+    padding-right: 0;
+}
 .register-card {
     width: 70w;
     height: 68vh;
@@ -70,10 +80,25 @@ header {
     text-align: center;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 450px) {
     .card {
         width: 100vw;
         height: 100vh;
-        overflow: scroll;
-        
     }
+    
+.recipe-card-body {
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    font-size: 14px;
+}
+
+.recipe-card-img {
+    height: 60vw;
+    width: 80vw;
+}
+
+.recipe-card-header {
+    text-align: center;
+}
+}
