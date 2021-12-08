@@ -3,103 +3,113 @@
 
 <h3 class="text-center"> Add Recipes</h3>
 <form class="col s12" method="POST" action="">
-<div class="accordion" id="accordionExample">
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="recipe_name">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                aria-expanded="true" aria-controls="collapseOne">
-                Recipe Name
-            </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="Recipe Name"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="recipe_name" name="recipe_name"  placeholder="Recipe Name" aria-label="Recipe Name"
-                        aria-describedby="Recipe Name">
-                        <label for="recipe_name"></label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="recipe_serving">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Serving size & Cook time
-            </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="recipe_serving"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <input type="text" class="form-control" id="recipe_serving" name="recipe_serving" placeholder="Serving Size"
-                    aria-label="Serving Size" aria-describedby="Serving Size">
-                    <label for="recipe_serving"></label>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" id="recipe_prep" name="recipe_prep"  placeholder="Prep Time" aria-label="Prep Time"
-                        aria-describedby="Prep Time">
-                        <label for="recipe_prep"></label>
+    <select class="form-select" id="category_name" name="category_name">
+        <option value="" disabled selected>Choose Category</option>
+        {% for category in categories %}
+        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+        {% endfor %}
+        <label for="category_name"></label>
+    </select>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="recipe_name">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Recipe Name
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="Recipe Name"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="recipe_cook" name="recipe_cook" placeholder="Cook Time" aria-label="Cook Time"
-                            aria-describedby="Cook Time">
-                            <label for="recipe_cook"></label>
+                        <input type="text" class="form-control" id="recipe_name" name="recipe_name"
+                            placeholder="Recipe Name" aria-label="Recipe Name" aria-describedby="Recipe Name">
+                        <label for="recipe_name"></label>
                     </div>
                 </div>
             </div>
         </div>
         <div class="accordion-item">
-            <h2 class="accordion-header" id="recipe_ingredients">
+            <h2 class="accordion-header" id="recipe_serving">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Ingredients
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Serving size & Cook time
                 </button>
             </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="recipe_ingredients"
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="recipe_serving"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    <div>
-                        <input type="text" class="form-control" id="recipe_ingredients1" name="recipe_ingredients1"   placeholder="Ingredients 1" aria-label="ingredients"
-                            aria-describedby="ingredients">
+                    <input type="text" class="form-control" id="recipe_serving" name="recipe_serving"
+                        placeholder="Serving Size" aria-label="Serving Size" aria-describedby="Serving Size">
+                    <label for="recipe_serving"></label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="recipe_prep" name="recipe_prep"
+                            placeholder="Prep Time" aria-label="Prep Time" aria-describedby="Prep Time">
+                        <label for="recipe_prep"></label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="recipe_cook" name="recipe_cook"
+                                placeholder="Cook Time" aria-label="Cook Time" aria-describedby="Cook Time">
+                            <label for="recipe_cook"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="recipe_ingredients">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Ingredients
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="recipe_ingredients"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div>
+                            <input type="text" class="form-control" id="recipe_ingredients1" name="recipe_ingredients1"
+                                placeholder="Ingredients 1" aria-label="ingredients" aria-describedby="ingredients">
                             <label for="recipe_ingredients1"></label>
-                        <input type="text" class="form-control" id="recipe_ingredients2" name="recipe_ingredients2" placeholder="Ingredients 2" aria-label="ingredients"
-                            aria-describedby="ingredients">
+                            <input type="text" class="form-control" id="recipe_ingredients2" name="recipe_ingredients2"
+                                placeholder="Ingredients 2" aria-label="ingredients" aria-describedby="ingredients">
                             <label for="recipe_ingredients2"></label>
-                        <input type="text" class="form-control" id="recipe_ingredients3" name="recipe_ingredients3" placeholder="Ingredients 3" aria-label="ingredients"
-                            aria-describedby="ingredients">
+                            <input type="text" class="form-control" id="recipe_ingredients3" name="recipe_ingredients3"
+                                placeholder="Ingredients 3" aria-label="ingredients" aria-describedby="ingredients">
                             <label for="recipe_ingredients3"></label>
-                        <input type="text" class="form-control" id="recipe_ingredients4" name="recipe_ingredients4" placeholder="Ingredients 4" aria-label="ingredients"
-                            aria-describedby="ingredients">
+                            <input type="text" class="form-control" id="recipe_ingredients4" name="recipe_ingredients4"
+                                placeholder="Ingredients 4" aria-label="ingredients" aria-describedby="ingredients">
                             <label for="recipe_ingredients4"></label>
-                        <input type="text" class="form-control" id="recipe_ingredients5" name="recipe_ingredients5" placeholder="Ingredients 5" aria-label="ingredients"
-                            aria-describedby="ingredients">
+                            <input type="text" class="form-control" id="recipe_ingredients5" name="recipe_ingredients5"
+                                placeholder="Ingredients 5" aria-label="ingredients" aria-describedby="ingredients">
                             <label for="recipe_ingredients5"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="recipe_method">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                    aria-expanded="true" aria-controls="collapseFour">
+                    Directions
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="recipe_method"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="input-group mb-3">
+                        <textarea class="form-control" id="recipe_method" name="recipe_method"
+                            aria-label="Directions"></textarea>
+                        <label for="recipe_method"></label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" name="recipe_liked"
+                            id="recipe_liked" checked>
+                        <label for="recipe_liked" class="form-check-label"
+                            for="flexSwitchCheckChecked">Favourite</label>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="recipe_method">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                aria-expanded="true" aria-controls="collapseFour">
-                Directions
-            </button>
-        </h2>
-        <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="recipe_method"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <div class="input-group mb-3">
-                    <textarea class="form-control"id="recipe_method" name="recipe_method"  aria-label="Directions"></textarea>
-                    <label for="recipe_method"></label>
-                </div>
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" name="recipe_liked" id="recipe_liked" checked>
-                    <label for="recipe_liked" class="form-check-label" for="flexSwitchCheckChecked">Favourite</label>
-                  </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 </form>
 
