@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="login-view">
+    <h3 class="text-center">Login</h3>
+    <div class="container-fluid login-card">
+        <div class="row">
+            <div class="col-6 offset-md-3">
+                <form class="login-form" method="POST" action="{{ url_for('login') }}">
+                    <div class="login-card card">
+                        <div class="card-header text-center">
+                        </div>
+                        <div class="card-body">
+                            <!-- username -->
+                            <div class="row">
+                                <div class="form-control">
+                                    <i class="fas fa-user-plus"></i>
+                                    <label for="username" class="form-label text-muted"></label>
+                                    <input id="username" name="username" type="text" placeholder="Username"
+                                        class="validate">
+
+                                </div>
+                            </div>
+                            <!-- password -->
+                            <div class="row">
+                                <div class="form-control">
+                                    <i class="fas fa-user-lock"></i>
+                                    <label for="password" class="form-label text-muted"></label>
+                                    <input id="password" name="password" type="password" placeholder="Password"
+                                        class="validate">
+
+                                </div>
+                            </div>
+                            <!-- register -->
+                            <div class="card-footer login-footer p-1">
+                                <div class="row">
+                                    <button type="submit" class="btn btn-primary">
+                                        Login <i class="fas fa-sign-in-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+</section>
+
+
+
+{% endblock %}

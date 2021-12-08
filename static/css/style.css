@@ -6,6 +6,19 @@
     border: none;
 }
 
+
+.synopsis {
+    font-size: larger;
+    font-weight: 600;
+}
+
+.category-card {
+    width: 18rem;
+    height: 18rem;
+    text-align: center;
+}
+
+
 body {
     background-color: #fff;
     color: #111;
@@ -42,7 +55,7 @@ header {
 
 .recipe-card {
     width: 80vw;
-    height: 70vh;
+    height: 60vh;
     
 }
 
