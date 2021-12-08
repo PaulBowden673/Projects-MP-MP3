@@ -80,6 +80,10 @@ header {
     padding-right: 0;
 }
 
+.flashes {
+    line-height: 2;
+}
+
 .footer {
     position: fixed;
     left: 0;
