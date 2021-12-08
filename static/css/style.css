@@ -84,6 +84,12 @@ header {
     line-height: 2;
 }
 
+add-recipe {
+    overflow: scroll;
+}
+.add-recipe {
+   font-size: small;
+}
 .footer {
     position: fixed;
     left: 0;

@@ -2,9 +2,9 @@
 {% block content %}
 <section class="recipe-view">
     {% for recipes in recipes %}
-    
+
     <h3 class="text-center"> Recipes</h3>
-    
+
     <div class="container-fluid">
         <div class="row">
             <div class="col p-0 offset-md-1">
@@ -15,10 +15,15 @@
                                     class="card-img-top" alt="#">
                                 {{recipes.recipe_name}}
                             </h5>
-                            {{recipes.recipe_liked}}
+                            {% if recipes.recipe_liked == "on" %}
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                                <label class="form-check-label" for="flexSwitchCheckChecked"></label>
+                              </div>
+                            {% endif %}
                             <p> {{recipes.recipe_category}}</p>
                             <p>{{recipes.recipe_serving}}</p>
-                                <p>{{recipes.recipe_time}}</p>
+                            <p>{{recipes.recipe_time}}</p>
                             <li class="list-group-item">{{recipes.recipe_ingredients1}}</li>
                             <li class="list-group-item">{{recipes.recipe_ingredients2}}</li>
                             <li class="list-group-item">{{recipes.recipe_ingredients3}}</li>
@@ -39,8 +44,8 @@
             </div>
         </div>
         <div class="text-center">
-        <button type="button" class="btn btn-secondary">Previous</button>
-        <button type="button" class="btn btn-secondary">Next</button>
-</div>
+            <button type="button" class="btn btn-secondary">Previous</button>
+            <button type="button" class="btn btn-secondary">Next</button>
+        </div>
 </section>
 {% endblock %}
