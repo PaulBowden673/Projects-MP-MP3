@@ -18,7 +18,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-
 @app.route("/")
 @app.route("/index")
 def index():
@@ -101,13 +100,33 @@ def logout():
     return redirect(url_for("index"))
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    if request.method == "POST":
+        recipe_liked = "on" if request.form.get("recipe_liked") else "off"
+        recipe = {
+            "category_name": request.form.get("category_name"),
+            "recipe_name": request.form.get("recipe_name"),
+            "recipe_serving": request.form.get("recipe_serving"),
+            "recipe_prep": request.form.get("recipe_prep"),
+            "recipe_cook": request.form.get("recipe_cook"),
+            "recipe_ingredients1": request.form.get("recipe_ingredients1"),
+            "recipe_ingredients2": request.form.get("recipe_ingredients2"),
+            "recipe_ingredients3": request.form.get("recipe_ingredients3"),
+            "recipe_ingredients4": request.form.get("recipe_ingredients4"),
+            "recipe_ingredients5": request.form.get("recipe_ingredients5"),
+            "recipe_method": request.form.get("recipe_method"),
+            "recipe_liked": recipe_liked,
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe Successfully Added")
+        return redirect(url_for("index"))
+
+
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add-recipe.html", categories=categories)
+    return render_template("add_recipe.html", categories=categories)
     
-
-
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

@@ -15,6 +15,7 @@
                                     class="card-img-top" alt="#">
                                 {{recipes.recipe_name}}
                             </h5>
+                            <p><em>by: {{ recipes.created_by }}</em></p>
                             {% if recipes.recipe_liked == "on" %}
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>

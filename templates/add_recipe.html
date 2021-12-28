@@ -2,7 +2,8 @@
 {% block content %}
 
 <h3 class="text-center"> Add Recipes</h3>
-<form class="col s12" method="POST" action="">
+<form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
+     <!-- category selection -->
     <select class="form-select" id="category_name" name="category_name">
         <option value="" disabled selected>Choose Category</option>
         {% for category in categories %}
@@ -10,6 +11,7 @@
         {% endfor %}
         <label for="category_name"></label>
     </select>
+      <!-- recipe name -->
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="recipe_name">
@@ -18,7 +20,7 @@
                     Recipe Name
                 </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="Recipe Name"
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="Recipe Name"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     <div class="input-group mb-3">
@@ -29,6 +31,7 @@
                 </div>
             </div>
         </div>
+        <!-- recipe serving & Cook time-->
         <div class="accordion-item">
             <h2 class="accordion-header" id="recipe_serving">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -54,6 +57,7 @@
                     </div>
                 </div>
             </div>
+            <!-- recipe ingredients -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="recipe_ingredients">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -85,6 +89,7 @@
                 </div>
             </div>
         </div>
+        <!-- recipe method -->
         <div class="accordion-item">
             <h2 class="accordion-header" id="recipe_method">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
@@ -92,7 +97,7 @@
                     Directions
                 </button>
             </h2>
-            <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="recipe_method"
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="recipe_method"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     <div class="input-group mb-3">
@@ -110,7 +115,14 @@
             </div>
         </div>
     </div>
-
+   <!-- submit button -->
+   <div class="row">
+    <div class="col-s-12 text-center">
+        <button type="submit" class="btn btn-primary">
+            Add Recipe <i class="fas fa-plus-square right"></i>
+        </button>
+    </div>
+</div>
 </form>
 
 {% endblock %}
