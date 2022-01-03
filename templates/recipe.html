@@ -1,31 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="recipe-view">
-    {% for recipes in recipes %}
+    {% for recipe in recipes %}
 
     <h3 class="text-center"> Recipes</h3>
 
     <div class="container-fluid">
         <div class="row">
             <div class="col p-0 offset-md-1">
-               <div class="recipe-card card">
+                <div class="recipe-card card">
                     <div class="recipe-card-body card-body">
                         <div class="recipe-card-header card-header">
                             <h5><img class="recipe-card-img card-img" src="{{ recipes.recipe_image }}"
                                     class="card-img-top" alt="recipe image">
-                                    {{ recipes.recipe_name }}
+                                {{ recipes.recipe_name }}
                             </h5>
                             <p>{{ recipes.recipe_description }}</p>
                             <p><em>by: {{ recipes.created_by }}</em></p>
                             {% if recipes.recipe_liked == "on" %}
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckChecked" checked>
                                 <label class="form-check-label" for="flexSwitchCheckChecked"></label>
-                              </div>
+                            </div>
                             {% endif %}
                             <p> {{recipes.recipe_category}}</p>
                             <p>Serves: {{recipes.recipe_serving}}</p>
-                            <p>Prep time: {{recipes.recipe_prep}}</p> 
+                            <p>Prep time: {{recipes.recipe_prep}}</p>
                             <p>Cook time: {{recipes.recipe_cook}}</p>
                             <li class="list-group-item">{{recipes.recipe_ingredients1}}</li>
                             <li class="list-group-item">{{recipes.recipe_ingredients2}}</li>
@@ -33,13 +34,17 @@
                             <li class="list-group-item">{{recipes.recipe_ingredients4}}</li>
                             <li class="list-group-item">{{recipes.recipe_ingredients5}}</li>
                             <div class="recipe-card-footer card-footer">
-                            <li class="list-group-item">{{recipes.recipe_method}}</li>   
+                                <li class="list-group-item">{{recipes.recipe_method}}</li>
                             </div>
                             {% endfor %}
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <a href="" class="btn btn-primary">Edit</a>
+            <a href="" class="btn btn-warning">Delete</a>
         </div>
 </section>
 {% endblock %}

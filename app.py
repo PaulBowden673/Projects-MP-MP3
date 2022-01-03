@@ -24,17 +24,24 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/recipes")
-def recipes():
-    recipes = mongo.db.recipes.find()
-    return render_template("recipe.html", recipes=recipes)
-    
+@app.route("/recipe")
+def recipe():
+    recipe = mongo.db.recipes.find()
+    return render_template("recipe.html", recipe=recipe)
 
 
 @app.route("/recipe_list")
 def recipe_list(): 
     recipes = mongo.db.recipes.find()
     return render_template("recipe_list.html", recipes=recipes)
+
+
+"""
+@app.route("/dinner")
+def dinner():
+    dinner = mongo.db.recipes.find(recipes.recipe_category == "Dinner")
+    return render_template("recipe_list.html", dinner=dinner)
+"""
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -122,7 +129,7 @@ def add_recipe():
             "recipe_ingredients3": request.form.get("recipe_ingredients3"),
             "recipe_ingredients4": request.form.get("recipe_ingredients4"),
             "recipe_ingredients5": request.form.get("recipe_ingredients5"),
-            "recipe_method": request.form.get("recipe_method"),
+            "recipe_description": request.form.get("recipe_description"),
             "recipe_liked": recipe_liked,
             "created_by": session["user"]
         }
@@ -130,10 +137,15 @@ def add_recipe():
         flash("Recipe Successfully Added")
         return redirect(url_for("index"))
 
-
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
-    
+
+
+@app.route("/edit_recipe/<recipes_id>", methods=["GET", "POST"])
+def edit_recipe(recipes_id):
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    categories = mongo.db.categories.find().sort("recipe_category", 1)
+    return render_template("edit_recipe.html", recipes=recipes, categories=categories)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

@@ -1,0 +1,75 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<!--Search form-->
+<div class="search-container">
+    <form action="{{ url_for('search', query=query, current_page=current_page) }}" class="search">
+      <input type="text" class="search-input" id="query" name="query" placeholder="Search recipes...">
+      <button class="search-button">
+        <i class="fas fa-search search-icon"></i>
+      </button>
+  </form>
+</div>
+
+<!--Search results-->
+<div class="search-results">
+     <!-- Search Results Count -->
+     {% if query %}
+         <!-- 0 Results -->
+         {% if number_of_recipes_found == 0 %}
+            <h2 class="sub-heading">Sorry, no results found for <span class="text-red">{{ query }}</span></h2>
+            <p>Please, try a more general term, check the spelling or look up a specific ingredient</p>
+
+            <div class="">
+                <a href="{{ url_for('all_recipes')}}"
+                    class=" btn btn-primary"
+                    id="btn-home">
+                    Back to all recipes
+                </a>
+            </div>
+
+          <!-- 1 result -->
+         {% elif number_of_recipes_found==1 %}
+            <h2 class="sub-heading">Your search for "<span class="text-red">{{ query }}</span>" produced 
+                <span class="text-red">1</span> search result
+            </h2>
+
+           <!-- more than 1 result-->
+         {% else %}
+            <h2 class="sub-heading">Your search for "<span class="text-red">{{ query }}</span>" produced 
+                <span class="text-red">{{ number_of_recipes_found }}</span> search results
+            </h2>
+         {% endif %} 
+     {% else %}
+     <h2 class="sub-heading">You didn't enter any search key words. Please, try again.</h2>
+     <div class="">
+          <a href="{{ url_for('recipe_list')}}"
+          class="btn btn-primary"
+          id="btn-home">
+          Back to all recipes
+        </a>
+     </div>
+     {% endif %}
+
+</div>
+
+<div class="container-recipes">
+  <div class="">
+    {% for recipe in results %} 
+        {% include "partials/recipecards.html" %} 
+    {% endfor %}
+  </div>
+    <!--Pagination-->
+  <ul class="">
+    {% for page_num in results_pages %} 
+        {% if page_num == current_page %}
+        <li class="active"><a>{{ page_num }}</a></li>
+        {% else %}
+        <li class="">
+        <a href="{{ url_for('search', query=query, current_page=page_num) }}">{{ page_num }}</a>
+        </li>
+        {% endif %} 
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
