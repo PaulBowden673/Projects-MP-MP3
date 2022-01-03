@@ -15,19 +15,15 @@
             data-bs-parent="#accordionExample">
             <div class="accordion-body">
                 <div class="input-group mb-3">
-                  <a href="{{ url_for ('recipe') }}">
-                    {{ recipes.recipe_description }}</a>
+                    <a href="{{ url_for ('single_recipe', recipes_id=recipes._id) }}">
+                        {{ recipes.recipe_description }}</a>
                 </div>
-                <a href="" class="btn btn-warning">Delete</a>
+                {% if session.user|lower == recipes.created_by|lower %}
+                <a href="{{ url_for('delete_recipe', recipes_id=recipes._id) }}" class="btn btn-warning">Delete</a>
                 <a href="{{ url_for('edit_recipe', recipes_id=recipes._id) }}" class="btn btn-primary">Edit</a>
+                {% endif %}
             </div>
         </div>
     </div>
-
-
-
     {% endfor %}
-
-
-
     {% endblock %}

@@ -24,9 +24,9 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/recipe")
-def recipe():
-    recipe = mongo.db.recipes.find()
+@app.route("/single_recipe/<recipes_id>")
+def single_recipe(recipes_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
     return render_template("recipe.html", recipe=recipe)
 
 
@@ -34,14 +34,6 @@ def recipe():
 def recipe_list(): 
     recipes = mongo.db.recipes.find()
     return render_template("recipe_list.html", recipes=recipes)
-
-
-"""
-@app.route("/dinner")
-def dinner():
-    dinner = mongo.db.recipes.find(recipes.recipe_category == "Dinner")
-    return render_template("recipe_list.html", dinner=dinner)
-"""
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -161,11 +153,20 @@ def edit_recipe(recipes_id):
             "created_by": session["user"]
         }
         mongo.db.recipes.update({"_id": ObjectId(recipes_id)}, submit)
-        flash("Task Successfully Updated")
+        flash("Recipe Successfully Updated")
 
-    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
     categories = mongo.db.categories.find().sort("recipe_category", 1)
-    return render_template("edit_recipe.html", recipes=recipes, categories=categories)
+    return render_template("recipe_list.html", 
+    recipe=recipe, categories=categories)
+
+
+@app.route("/delete_recipe/<recipes_id>")
+def delete_recipe(recipes_id):
+    mongo.db.recipes.remove({"_id": ObjectId(recipes_id)})
+    flash("Recipe Successfully Deleted")
+    return redirect(url_for("recipe_list"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
