@@ -28,6 +28,13 @@ def index():
 def recipes():
     recipes = mongo.db.recipes.find()
     return render_template("recipe.html", recipes=recipes)
+    
+
+
+@app.route("/recipe_list")
+def recipe_list(): 
+    recipes = mongo.db.recipes.find()
+    return render_template("recipe_list.html", recipes=recipes)
 
 
 @app.route("/register", methods=["GET", "POST"])

@@ -8,13 +8,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col p-0 offset-md-1">
-                <div class="recipe-card card">
+               <div class="recipe-card card">
                     <div class="recipe-card-body card-body">
                         <div class="recipe-card-header card-header">
-                            <h5><img class="recipe-card-img card-img" src="static/images/mackeral-hash.jpg"
-                                    class="card-img-top" alt="#">
-                                {{recipes.recipe_name}}
+                            <h5><img class="recipe-card-img card-img" src="{{ recipes.recipe_image }}"
+                                    class="card-img-top" alt="recipe image">
+                                    {{ recipes.recipe_name }}
                             </h5>
+                            <p>{{ recipes.recipe_description }}</p>
                             <p><em>by: {{ recipes.created_by }}</em></p>
                             {% if recipes.recipe_liked == "on" %}
                             <div class="form-check form-switch">
@@ -23,30 +24,22 @@
                               </div>
                             {% endif %}
                             <p> {{recipes.recipe_category}}</p>
-                            <p>{{recipes.recipe_serving}}</p>
-                            <p>{{recipes.recipe_time}}</p>
+                            <p>Serves: {{recipes.recipe_serving}}</p>
+                            <p>Prep time: {{recipes.recipe_prep}}</p> 
+                            <p>Cook time: {{recipes.recipe_cook}}</p>
                             <li class="list-group-item">{{recipes.recipe_ingredients1}}</li>
                             <li class="list-group-item">{{recipes.recipe_ingredients2}}</li>
                             <li class="list-group-item">{{recipes.recipe_ingredients3}}</li>
                             <li class="list-group-item">{{recipes.recipe_ingredients4}}</li>
                             <li class="list-group-item">{{recipes.recipe_ingredients5}}</li>
-
                             <div class="recipe-card-footer card-footer">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">{{recipes.recipe_method}}</li>
-
-                                </ul>
+                            <li class="list-group-item">{{recipes.recipe_method}}</li>   
                             </div>
-
                             {% endfor %}
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="text-center">
-            <button type="button" class="btn btn-secondary">Previous</button>
-            <button type="button" class="btn btn-secondary">Next</button>
         </div>
 </section>
 {% endblock %}

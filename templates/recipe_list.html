@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="text-center">Recipes</h3>
+{% for recipes in recipes %}
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="recipe_name">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                {{ recipes.recipe_name }}
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="Recipe Name"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <div class="input-group mb-3">
+                  <a href="{{ url_for('recipes') }}"><strong>{{ recipes.category_name }}</strong><br>
+                    {{ recipes.recipe_description }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    {% endfor %}
+
+
+
+    {% endblock %}

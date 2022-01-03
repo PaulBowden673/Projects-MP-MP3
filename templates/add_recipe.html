@@ -7,7 +7,7 @@
     <select class="form-select" id="category_name" name="category_name">
         <option value="" disabled selected>Choose Category</option>
         {% for category in categories %}
-        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+        <option value="{{ category.recipe_category }}">{{ category.recipe_category }}</option>
         {% endfor %}
         <label for="category_name"></label>
     </select>
@@ -31,6 +31,26 @@
                 </div>
             </div>
         </div>
+        <!-- recipe description-->
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="recipe_description">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">
+                        Recipe Description
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="Recipe Description"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="recipe_description" name="recipe_description"
+                                placeholder="Recipe Decsription" aria-label="Recipe Description" aria-describedby="Recipe Description">
+                            <label for="recipe_description"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <!-- recipe serving & Cook time-->
         <div class="accordion-item">
             <h2 class="accordion-header" id="recipe_serving">
