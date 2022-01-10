@@ -24,14 +24,21 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("recipe_list.html", recipes=recipes)
+
+
 @app.route("/single_recipe/<recipes_id>")
 def single_recipe(recipes_id):
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
-    return render_template("recipe.html", recipe=recipe)
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    return render_template("recipe.html", recipes=recipes)
 
 
 @app.route("/recipe_list")
-def recipe_list(): 
+def recipe_list():
     recipes = mongo.db.recipes.find()
     return render_template("recipe_list.html", recipes=recipes)
 
@@ -157,13 +164,13 @@ def edit_recipe(recipes_id):
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
     categories = mongo.db.categories.find().sort("recipe_category", 1)
-    return render_template("recipe_list.html", 
-    recipe=recipe, categories=categories)
+    return render_template(
+        "recipe_list.html", recipe=recipe, categories=categories)
 
 
 @app.route("/delete_recipe/<recipes_id>")
 def delete_recipe(recipes_id):
-    mongo.db.recipes.remove({"_id": ObjectId(recipes_id)})
+    mongo.db.recipes.recipes.remove({"_id": ObjectId(recipes_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("recipe_list"))
 
