@@ -1,19 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="recipe-view">
-    
+<section class="recipe-view m-2">
+
 
     <h3 class="text-center"> Recipes</h3>
     <div class="container-fluid">
         <div class="row">
             <div class="col p-0 offset-md-1">
-                <div class="recipe-card card">
+                <div class="recipe-card card mb-2">
                     <div class="recipe-card-body card-body">
                         <div class="recipe-card-header card-header">
+                            {% if recipes.recipe_image %}
                             <h5><img class="recipe-card-img card-img" src="{{ recipes.recipe_image }}"
                                     class="card-img-top" alt="">
                                 {{ recipes.recipe_name }}
                             </h5>
+                            {% else %}
+                            <h5><img class="recipe-card-img card-img" src="static/images/recipe_placeholder.jpg"
+                                    class="card-img-top" alt="">
+                                {{ recipes.recipe_name }}
+                            </h5>
+                            {% endif %}
                             <p>{{ recipes.recipe_description }}</p>
                             <p><em>by: {{ recipes.created_by }}</em></p>
                             {% if recipes.recipe_liked == "on" %} Liked
@@ -35,12 +42,12 @@
                             <div class="recipe-card-footer card-footer">
                                 <li class="list-group-item">{{recipes.recipe_method}}</li>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
 </section>
 {% endblock %}

@@ -47,8 +47,16 @@ header {
 
 .info-card {
     width: 40vw;
-    height: 40vh;
-    
+    height: 40vh;    
+}
+
+.splash-card {
+width: 15rem;
+}
+
+
+.card-body {
+    background-color: aliceblue;
 }
 
 .recipe-view {
@@ -100,7 +108,8 @@ header {
 }
 
 @media screen and (max-width: 450px) {
-    .card {
+    .card,
+    .splash-card {
         width: 100vw;
         height: 100vh;
     }
