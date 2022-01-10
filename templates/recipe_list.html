@@ -22,7 +22,12 @@
 <div class="row row-cols-1 row-cols-md-3 mt-2">
     <div class="card-deck">
         <div class="card rounded splash-card"> <a href="{{ url_for ('single_recipe', recipes_id=recipes._id) }}">
-                <img src="{{ recipes.recipe_image }}" class="card-img-top" alt="">
+            {% if recipes.recipe_image %} 
+            <img src="{{ recipes.recipe_image }}" class="card-img-top" alt="">
+            {% else %}
+            <img class="recipe-card-img card-img" src="../static/images/recipe_placeholder.jpg"
+                                    class="card-img-top" alt="">
+                {% endif %}
                 <div class="card-body">
                     <h5 class="card-title">{{ recipes.recipe_name }}</h5>
                 </div>

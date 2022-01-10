@@ -52,8 +52,12 @@ header {
 
 .splash-card {
 width: 15rem;
+
 }
 
+main.container-fluid {
+    padding:0%;
+}
 
 .card-body {
     background-color: aliceblue;
@@ -122,8 +126,8 @@ width: 15rem;
 }
 
 .recipe-card-img {
-    height: 60vw;
-    width: 80vw;
+    height: 40vw;
+    width: 60vw;
 }
 
 .recipe-card-header {
