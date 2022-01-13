@@ -72,6 +72,10 @@ main.container-fluid {
     padding:0%;
 }
 
+.info-row {
+    background-color: aliceblue;
+}
+
 .card-body {
     background-color: #f0f8ff;
 }

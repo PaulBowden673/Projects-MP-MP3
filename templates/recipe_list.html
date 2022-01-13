@@ -17,10 +17,9 @@
         </div>
     </form>
 </div>
-{% for recipes in recipes %}
-
 <div class="row">
-        <div class="col-12 m-1">
+    {% for recipes in recipes %}
+        <div class="col-sm-12 col-md-4 m-1">
             <div class="card rounded splash-card"> <a href="{{ url_for ('single_recipe', recipes_id=recipes._id) }}">
                     {% if recipes.recipe_image %}
                     <img src="{{ recipes.recipe_image }}" class="card-img-top" alt="">
