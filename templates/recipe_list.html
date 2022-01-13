@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="text-center">Recipes</h3>
+<h3 class="text-center">All Recipes</h3>
 <div class="row">
     <form class="search" action="{{ url_for('search') }}" method="post">
         <div class="col-12">
@@ -19,24 +19,26 @@
 </div>
 {% for recipes in recipes %}
 
-<div class="row row-cols-1 row-cols-md-4 g-2 m-1">
-    <div class="card-deck">
-        <div class="card rounded splash-card"> <a href="{{ url_for ('single_recipe', recipes_id=recipes._id) }}">
-                {% if recipes.recipe_image %}
-                <img src="{{ recipes.recipe_image }}" class="card-img-top" alt="">
-                {% else %}
-                <img class="recipe-card-img card-img" src="../static/images/recipe_placeholder.jpg" class="card-img-top"
-                    alt="">
-                {% endif %}
+<div class="row">
+        <div class="col-12 m-1">
+            <div class="card rounded splash-card"> <a href="{{ url_for ('single_recipe', recipes_id=recipes._id) }}">
+                    {% if recipes.recipe_image %}
+                    <img src="{{ recipes.recipe_image }}" class="card-img-top" alt="">
+                    {% else %}
+                    <img class="recipe-card-img card-img" src="../static/images/recipe_placeholder.jpg"
+                        class="card-img-top" alt="">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ recipes.recipe_name }}</h5>
+                    </div>
+                </a>
                 <div class="card-body">
-                    <h5 class="card-title">{{ recipes.recipe_name }}</h5>
+                    {% if session.user|lower == recipes.created_by|lower %}
+                    <a href="{{ url_for('delete_recipe', recipes_id=recipes._id) }}"
+                        class="btn-sm btn-warning">Delete</a>
+                    <a href="{{ url_for('edit_recipe', recipes_id=recipes._id) }}" class="btn-sm btn-primary">Edit</a>
+                    {% endif %}
                 </div>
-            </a>
-            <div class="card-body">
-                {% if session.user|lower == recipes.created_by|lower %}
-                <a href="{{ url_for('delete_recipe', recipes_id=recipes._id) }}" class="btn-sm btn-warning">Delete</a>
-                <a href="{{ url_for('edit_recipe', recipes_id=recipes._id) }}" class="btn-sm btn-primary">Edit</a>
-                {% endif %}
             </div>
         </div>
     </div>
