@@ -186,10 +186,10 @@ def edit_recipe(recipes_id):
         mongo.db.recipes.update_one({"_id": ObjectId(recipes_id)}, submit)
         flash("Recipe Successfully Updated")
 
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
     categories = mongo.db.categories.find().sort("recipe_category", 1)
     return render_template(
-        "recipe_list.html", recipe=recipe, categories=categories)
+        "edit_recipe.html", edit_recipe=mongo.db.recipes.find_one(
+            {"_id": ObjectId(recipes_id)}), categories=categories)
 
 
 @app.route("/delete_recipe/<recipes_id>")

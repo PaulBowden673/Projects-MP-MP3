@@ -3,7 +3,7 @@
 
 <h3 class="text-center">Recipes</h3>
 <div class="row">
-    <form action="{{ url_for('search') }}" method="post">
+    <form class="search" action="{{ url_for('search') }}" method="post">
         <div class="col-12">
             <div class="input-group rounded">
                 <input type="text" name="query" id="query" class="form-control rounded" placeholder="Search"
@@ -17,10 +17,10 @@
         </div>
     </form>
 </div>
-<div class="row row-cols-1 row-cols-md-2 g-2">
-    <div class="col">
+{% for recipes in recipes %}
+
+<div class="row row-cols-1 row-cols-md-4 g-2 m-1">
     <div class="card-deck">
-        {% for recipes in recipes %}
         <div class="card rounded splash-card"> <a href="{{ url_for ('single_recipe', recipes_id=recipes._id) }}">
                 {% if recipes.recipe_image %}
                 <img src="{{ recipes.recipe_image }}" class="card-img-top" alt="">
@@ -39,10 +39,9 @@
                 {% endif %}
             </div>
         </div>
-        {% endfor %}
-    </div>
     </div>
 </div>
+{% endfor %}
 
 
 
