@@ -35,21 +35,22 @@ def search():
 def dinner():
     dinner = request.form.get('Dinner')
     recipes = list(mongo.db.recipes.find({"recipe_category": "Dinner"}))
-    return render_template("recipe_list.html", recipes=recipes)
+    return render_template("recipe_list.html", recipes=recipes, dinner=dinner)
 
 
 @app.route("/lunch", methods=["GET", "POST"])
 def lunch():
     lunch = request.form.get('Lunch')
     recipes = list(mongo.db.recipes.find({"recipe_category": "Lunch"}))
-    return render_template("recipe_list.html", recipes=recipes)
+    return render_template("recipe_list.html", recipes=recipes, lunch=lunch)
 
 
 @app.route("/breakfast", methods=["GET", "POST"])
 def breakfast():
     breakfast = request.form.get('Breakfast')
     recipes = list(mongo.db.recipes.find({"recipe_category": "Breakfast"}))
-    return render_template("recipe_list.html", recipes=recipes)
+    return render_template(
+        "recipe_list.html", recipes=recipes, breakfast=breakfast)
 
 
 @app.route("/single_recipe/<recipes_id>")

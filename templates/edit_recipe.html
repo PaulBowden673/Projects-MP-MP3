@@ -14,14 +14,13 @@
         {% endif %}
         {% endfor %}
     </select>
-    
     <!-- recipe name -->
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">
             <h2 class="accordion-header" id="recipe_name">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                     aria-expanded="true" aria-controls="collapseOne">
-                    Recipe Name
+                    Recipe Name 
                 </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="recipe_name"
@@ -29,7 +28,7 @@
                 <div class="accordion-body">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" id="recipe_name" name="recipe_name"
-                            placeholder="Recipe Name" aria-label="Recipe Name" aria-describedby="recipe_name">
+                        value="{{ recipe_name }}" aria-label="Recipe Name" aria-describedby="recipe_name">
                         <label for="recipe_name"></label>
                     </div>
                 </div>
@@ -39,7 +38,7 @@
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="recipe_description">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Recipe Description
                     </button>
@@ -49,7 +48,7 @@
                     <div class="accordion-body">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" id="recipe_description" name="recipe_description"
-                                placeholder="Recipe Description" aria-label="Recipe Description"
+                            value="{{ recipe_description }}" aria-label="Recipe Description"
                                 aria-describedby="recipe_description">
                             <label for="recipe_description"></label>
                         </div>
@@ -68,15 +67,15 @@
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <input type="text" class="form-control" id="recipe_serving" name="recipe_serving"
-                            placeholder="Serving Size" aria-label="Serving Size" aria-describedby="recipe_serving">
+                        value="{{ recipe_serving }}" aria-label="Serving Size" aria-describedby="recipe_serving">
                         <label for="recipe_serving"></label>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" id="recipe_prep" name="recipe_prep"
-                                placeholder="Prep Time" aria-label="Prep Time" aria-describedby="recipe_prep">
+                            value="{{ recipe_prep }}" aria-label="Prep Time" aria-describedby="recipe_prep">
                             <label for="recipe_prep"></label>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" id="recipe_cook" name="recipe_cook"
-                                    placeholder="Cook Time" aria-label="Cook Time" aria-describedby="recipe_cook">
+                                value="{{ recipe_cook }}" aria-label="Cook Time" aria-describedby="recipe_cook">
                                 <label for="recipe_cook"></label>
                             </div>
                         </div>
@@ -95,23 +94,23 @@
                         <div class="accordion-body">
                             <div>
                                 <input type="text" class="form-control" id="recipe_ingredients1"
-                                    name="recipe_ingredients1" placeholder="Ingredients 1" aria-label="ingredients"
+                                    name="recipe_ingredients1" value="{{ recipe_ingredients1 }}" aria-label="ingredients"
                                     aria-describedby="recipe_ingredients1">
                                 <label for="recipe_ingredients1"></label>
                                 <input type="text" class="form-control" id="recipe_ingredients2"
-                                    name="recipe_ingredients2" placeholder="Ingredients 2" aria-label="ingredients"
+                                    name="recipe_ingredients2" value="{{ recipe_ingredients2 }}" aria-label="ingredients"
                                     aria-describedby="recipe_ingredients2">
                                 <label for="recipe_ingredients2"></label>
                                 <input type="text" class="form-control" id="recipe_ingredients3"
-                                    name="recipe_ingredients3" placeholder="Ingredients 3" aria-label="ingredients"
+                                    name="recipe_ingredients3" value="{{ recipe_ingredients3 }}" aria-label="ingredients"
                                     aria-describedby="recipe_ingredients3">
                                 <label for="recipe_ingredients3"></label>
                                 <input type="text" class="form-control" id="recipe_ingredients4"
-                                    name="recipe_ingredients4" placeholder="Ingredients 4" aria-label="ingredients"
+                                    name="recipe_ingredients4" value="{{ recipe_ingredients4 }}" aria-label="ingredients"
                                     aria-describedby="recipe_ingredients4">
                                 <label for="recipe_ingredients4"></label>
                                 <input type="text" class="form-control" id="recipe_ingredients5"
-                                    name="recipe_ingredients5" placeholder="Ingredients 5" aria-label="ingredients"
+                                    name="recipe_ingredients5" value="{{ recipe_ingredients5 }}" aria-label="ingredients"
                                     aria-describedby="recipe_ingredients5">
                                 <label for="recipe_ingredients5"></label>
                             </div>
@@ -122,7 +121,7 @@
             <!-- recipe method -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="recipe_method">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                         Directions
                     </button>
@@ -144,6 +143,7 @@
                 </div>
             </div>
         </div>
+      
         <!-- submit button -->
         <div class="row">
             <div class="col-s-12 text-center">
