@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 /* General Styles */
 
 * {
@@ -6,6 +8,30 @@
     border: none;
 }
 
+/* Main CSS */
+
+body {
+    background-color: #fff;
+    color: #111;
+    scroll-behavior: auto;
+    font-family: 'Roboto';
+}
+
+header {
+    
+    width: 100vw;
+}
+
+.hero-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.8;
+    z-index: -10;
+}
 
 .synopsis {
     font-size: larger;
@@ -28,28 +54,6 @@
     height: 4rem;
 }
 
-body {
-    background-color: #fff;
-    color: #111;
-    scroll-behavior: auto;
-}
-
-header {
-    
-    width: 100vw;
-}
-
-.hero-image {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    opacity: 0.8;
-    z-index: -10;
-
-}
 .info-view {
     position: relative;
 }
@@ -69,7 +73,7 @@ main.container-fluid {
 }
 
 .card-body {
-    background-color: aliceblue;
+    background-color: #f0f8ff;
 }
 
 .recipe-view {
@@ -154,7 +158,6 @@ main.container-fluid {
     width: 95vw;
     height: 40vh;
     padding: 2px;
-    offset: 0;
 }
 
 .register-footer {

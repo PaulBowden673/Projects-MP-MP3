@@ -31,7 +31,7 @@ def search():
     return render_template("recipe_list.html", recipes=recipes)
 
 
-@app.route("/dinner", methods=["GET","POST"])
+@app.route("/dinner", methods=["GET", "POST"])
 def dinner():
     dinner = request.form.get('Dinner')
     recipes = list(mongo.db.recipes.find({"recipe_category": "Dinner"}))
@@ -123,7 +123,7 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-        
+
     return render_template("profile.html", username=username)
 
 
