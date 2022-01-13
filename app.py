@@ -129,6 +129,7 @@ def add_recipe():
             "recipe_ingredients4": request.form.get("recipe_ingredients4"),
             "recipe_ingredients5": request.form.get("recipe_ingredients5"),
             "recipe_description": request.form.get("recipe_description"),
+            "recipe_method": request.form.get("recipe_method"),
             "recipe_liked": recipe_liked,
             "created_by": session["user"]
         }
@@ -156,6 +157,7 @@ def edit_recipe(recipes_id):
             "recipe_ingredients4": request.form.get("recipe_ingredients4"),
             "recipe_ingredients5": request.form.get("recipe_ingredients5"),
             "recipe_description": request.form.get("recipe_description"),
+            "recipe_method": request.form.get("recipe_method"),
             "recipe_liked": recipe_liked,
             "created_by": session["user"]
         }
