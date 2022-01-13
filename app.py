@@ -31,6 +31,27 @@ def search():
     return render_template("recipe_list.html", recipes=recipes)
 
 
+@app.route("/dinner", methods=["GET","POST"])
+def dinner():
+    dinner = request.form.get('Dinner')
+    recipes = list(mongo.db.recipes.find({"recipe_category": "Dinner"}))
+    return render_template("recipe_list.html", recipes=recipes)
+
+
+@app.route("/lunch", methods=["GET", "POST"])
+def lunch():
+    lunch = request.form.get('Lunch')
+    recipes = list(mongo.db.recipes.find({"recipe_category": "Lunch"}))
+    return render_template("recipe_list.html", recipes=recipes)
+
+
+@app.route("/breakfast", methods=["GET", "POST"])
+def breakfast():
+    breakfast = request.form.get('Breakfast')
+    recipes = list(mongo.db.recipes.find({"recipe_category": "Breakfast"}))
+    return render_template("recipe_list.html", recipes=recipes)
+
+
 @app.route("/single_recipe/<recipes_id>")
 def single_recipe(recipes_id):
     recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
@@ -102,6 +123,7 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+        
     return render_template("profile.html", username=username)
 
 
@@ -161,7 +183,7 @@ def edit_recipe(recipes_id):
             "recipe_liked": recipe_liked,
             "created_by": session["user"]
         }
-        mongo.db.recipes.update({"_id": ObjectId(recipes_id)}, submit)
+        mongo.db.recipes.update_one({"_id": ObjectId(recipes_id)}, submit)
         flash("Recipe Successfully Updated")
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
@@ -172,7 +194,7 @@ def edit_recipe(recipes_id):
 
 @app.route("/delete_recipe/<recipes_id>")
 def delete_recipe(recipes_id):
-    mongo.db.recipes.recipes.remove({"_id": ObjectId(recipes_id)})
+    mongo.db.recipes.recipes.delete_one({"_id": ObjectId(recipes_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("recipe_list"))
 

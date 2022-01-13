@@ -2,13 +2,13 @@
 {% block content %}
 
 <h3 class="text-center"> Add Recipes</h3>
-<form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
+<form class="col sm-12" method="POST" action="{{ url_for('add_recipe') }}">
      <!-- category selection -->
     <select class="form-select" id="category_name" name="category_name">
         <option value="" disabled selected>Choose Category</option>
         {% for category in categories %}
         <option value="{{ category.recipe_category }}">{{ category.recipe_category }}</option>
-        {% endfor %}
+    {% endfor %}
         <label for="category_name"></label>
     </select>
       <!-- recipe name -->

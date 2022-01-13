@@ -2,16 +2,12 @@
 {% block content %}
 
 <h3 class="text-center"> Edit Recipes</h3>
-<form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipes_id=recipes._id) }}">
-     <!-- category selection -->
+<form class="col sm-12" method="POST" action="{{ url_for('edit_recipe', recipes_id=recipes._id) }}">
+    <!-- category selection -->
     <select class="form-select" id="category_name" name="category_name">
         <option value="" disabled selected>Choose Category</option>
         {% for category in categories %}
-        {% if categories.recipe_category == categories.recipe_category %}
-            <option value="{{ categories.recipe_category }}" selected>{{ categories.recipe_category }}</option>
-        {% else %}
-            <option value="{{ categories.recipe_category }}">{{ categories.recipe_category }}</option>
-        {% endif %}
+        <option value="{{ category.recipe_category }}">{{ category.recipe_category }}</option>
         {% endfor %}
         <label for="category_name"></label>
     </select>
@@ -29,7 +25,7 @@
                 <div class="accordion-body">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" id="recipe_name" name="recipe_name"
-                            placeholder="{{ recipes.recipe_name }}" aria-label="Recipe Name" aria-describedby="Recipe Name">
+                            placeholder="Recipe Name" aria-label="Recipe Name" aria-describedby="Recipe Name">
                         <label for="recipe_name"></label>
                     </div>
                 </div>
@@ -49,7 +45,7 @@
                     <div class="accordion-body">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" id="recipe_description" name="recipe_description"
-                                placeholder="{{ recipes.recipe_description }}" aria-label="Recipe Description" aria-describedby="Recipe Description">
+                                placeholder="Recipe Description" aria-label="Recipe Description" aria-describedby="Recipe Description">
                             <label for="recipe_description"></label>
                         </div>
                     </div>
@@ -67,15 +63,15 @@
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     <input type="text" class="form-control" id="recipe_serving" name="recipe_serving"
-                        placeholder="{{ recipes.recipe_serving }}" aria-label="Serving Size" aria-describedby="Serving Size">
+                        placeholder="Serving Size" aria-label="Serving Size" aria-describedby="Serving Size">
                     <label for="recipe_serving"></label>
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" id="recipe_prep" name="recipe_prep"
-                            placeholder="{{ recipes.recipe_prep }}" aria-label="Prep Time" aria-describedby="Prep Time">
+                            placeholder="Prep Time" aria-label="Prep Time" aria-describedby="Prep Time">
                         <label for="recipe_prep"></label>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" id="recipe_cook" name="recipe_cook"
-                                placeholder="{{ recipes.recipe_cook }}" aria-label="Cook Time" aria-describedby="Cook Time">
+                                placeholder="Cook Time" aria-label="Cook Time" aria-describedby="Cook Time">
                             <label for="recipe_cook"></label>
                         </div>
                     </div>
@@ -94,19 +90,19 @@
                     <div class="accordion-body">
                         <div>
                             <input type="text" class="form-control" id="recipe_ingredients1" name="recipe_ingredients1"
-                                placeholder="{{ recipes.recipe_ingredients1 }}" aria-label="ingredients" aria-describedby="ingredients">
+                                placeholder="Ingredients 1" aria-label="ingredients" aria-describedby="ingredients">
                             <label for="recipe_ingredients1"></label>
                             <input type="text" class="form-control" id="recipe_ingredients2" name="recipe_ingredients2"
-                                placeholder="{{ recipes.recipe_ingredients2 }}" aria-label="ingredients" aria-describedby="ingredients">
+                                placeholder="Ingredients 2" aria-label="ingredients" aria-describedby="ingredients">
                             <label for="recipe_ingredients2"></label>
                             <input type="text" class="form-control" id="recipe_ingredients3" name="recipe_ingredients3"
-                                placeholder="{{ recipes.recipe_ingredients2 }}" aria-label="ingredients" aria-describedby="ingredients">
+                                placeholder="Ingredients 3" aria-label="ingredients" aria-describedby="ingredients">
                             <label for="recipe_ingredients3"></label>
                             <input type="text" class="form-control" id="recipe_ingredients4" name="recipe_ingredients4"
-                                placeholder="{{ recipes.recipe_ingredients4 }}" aria-label="ingredients" aria-describedby="ingredients">
+                                placeholder="Ingredients 4" aria-label="ingredients" aria-describedby="ingredients">
                             <label for="recipe_ingredients4"></label>
                             <input type="text" class="form-control" id="recipe_ingredients5" name="recipe_ingredients5"
-                                placeholder="{{ recipes.recipe_ingredients5 }}" aria-label="ingredients" aria-describedby="ingredients">
+                                placeholder="Ingredients 5" aria-label="ingredients" aria-describedby="ingredients">
                             <label for="recipe_ingredients5"></label>
                         </div>
                     </div>
