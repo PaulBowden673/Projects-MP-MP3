@@ -128,34 +128,33 @@ JQuery 3.5.0 - to simplify DOM manipulation and to initialize Materialize functi
 - Add futher sets of questions to make the game more challenging, such as Food Safety, Fire Safety, Licensing.
 
 ## Testing
- I have thoroughly tested this website and was unable to find any broken links within it. I have also tried to submit blank contact forms and forms with incorrect email addresses which gave me an error message by way of alert box when thhe emial was sent.
- 
- ### Testing User Stories from UX section
+All recipes and single recipe display
+When I click on "All Recipe page", I can see recipe cards displayed in rows, 8 recipes per page. In that view, I can see image, recipe name and short information about the recipe. Clicking on the recipe card redirects me to the single recipe page, where I can see all the detailed information about the recipe. I tested this functionality as a non-logged in (guest) user and a logged in user and it perfectly worked in both cases. I also can see the total number of the recipes in parentheses. I tried to add and delete some recipes, and this number changed accordingly.
 
-User stories from the UX section were tested to ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals. 
+Create a new user account
+I created my main account, as well as a few test accounts to test this functionality. Clicking on the "Register" button in the navbar opens the form, where I can put username and password to create a new account. I tried to input an existing username, not matching passwords in "password" and "confirm password" fields, and input less then 3 or more then 15 charachters. In all cases I got a corresponding flash error message. As well as that, I tried to leave an empty field and submit the form, but got an error message again asking to fill the field. When the form was successfully submitted, I was redirected to the home page, seeing a message that my new account was created. I also checked the link to the Login page at the bottom of the form, which worked well.
 
- #### First Time visitor
+Login
+Clicking on the "Login" button in the navbar opens the form, allowing me to login to my account. I tried to leave empty fields or input incorrect details, but I was not able to submit the form if something was entered incorrectly. After a successful login I was redirected to the home page, seeing the message that I was logged in. I also checked the link to the Register page at the bottom of the form, which worked well.
 
-1. As a first time Visitor, I want to easily understand the purpose of the site and how to play the game.
-    1. On entering the site, the user is presented with a clean website detailing the purpose of the site and giving instructions on how to play the game after clicking on the rules button.  
-2. As a first time visitor, I want to find the game enjoyable and challenging.
-    1. . On entering the website the user is presented with several buttons - Play, Rules, Highscores and Contact. THe user can then easily choose to play or to review the other options presented.
- 
- #### Returning Visitor
+Change username/password
+I changed my username and password multiple times to ensure that this functionality works well. Both pages open when the corresponding buttons are clicked. Validations against existing username and against incorrect input works well. In both forms I can see the flash messages about the changes I made. As well as that, If I click "Cancel" button, I will be redirected to the "Account Settings" page. For "change username" function, I checked database to make sure that username was updated there.
 
-1.  As a returning visitor, I want to still find the game enjoyable and challenging. 
-    1.  The questions are displayed in a random order everytime the game is started.
-2.  As a returning visitor, I want to be able to give feedback to the website owner and suggest improvements or ideas.
-    1. The contact button takes the user from the home screen to blank email form for them to complete with name, email address and message. Upon clicking send email, the email is sent via EmailJS to the site owner.
+Delete Account
+I deleted some testing accounts to test the functionality. Followed by clicking the "Delete account" button on the Account Settings page, the modal opens and I am asked to confirm the deletion by entering my password. I tried to put the wrong password, but got an error flash message. When I input the correct password, I am redirected to the home page and see the message that my account was deleted. Then, I checked the database to make sure that the account as well as all the recipes created by this user were removed.
 
-#### Frequent Visitor
+Add New Recipe
+I added plenty of test recipes to check the functionality throughout the development. If I leave some of the required fields empty, I will not be able to submit the form. I can see the flash messages displayed if my input does not meet length requirement. I also tried to create recipe without the URL image provided, to check if the placeholder is in place and it works well.
 
-1. As a frequent visitor,  I want to still find the game enjoyable and challenging.
-    1. The questions are presented in a random order everytime the game is played.
-2. As a frequent visitor,  I want to be able to try to beat the highest scores.
-    1. The user can display the current table of high scores ( the scores are only saved locally on the same device previously used)
-3. As a frequent visitor, I want to be able to give feedback on the quiz.
-    1. The contact button takes the user from the home screen to blank email form for them to complete with name, email address and message. Upon clicking send email, the email is sent via EmailJS to the site owner.
+Edit Recipe
+If I am the author of selected recipe, I can see the buttons "Edit" and "Delete" in the single_recipe page. I tried to view someone else's recipes and the buttons were not displayed. I also tried to change the link manually in the browser to edit other's recipe. However, I was not able to open the form and got the message, that I can only edit my own recipes, which means defensive design works well against brute forcing. Being the author of the recipe, I can view the form with pre-populated fields and can change anything that I want. If all fields are valid, I can see the changes I made in a Single Recipe Details Page after the submission. I tried to edit a number of recipes and edit different fields, everything worked correctly.
+
+Delete Recipe
+I deleted some dummy testing recipes to test the functionality. After clicking the "delete" button, I saw the modal showing up asking me to confirm the deletion. After clicking "Cancel" I was redirected back and modal closeed. After clicking "Delete" button in the modal, I was redirected to the home page and saw the message about the succsessful deletion.
+Then I checked the database to make sure, that the recipe was removed. As well as that, I tested against brute-forcing, trying to delete another user's recipe(by changing the link manually in the browser), but wasn't able to do that.
+
+My Recipes
+The link in the navbar leads to the My Recipes page, where I can see the total number of my recipes, my recipe cards, "Add New Recipe" button and pagination in place. I tested pagination by clicking the buttons to switch pages, tested the "Add New Recipe" button that redirects to the corresponding form and tested total number change by creating/deleting a recipe. All functionality works well.
     
 #### Devices
 
