@@ -3,54 +3,39 @@
 
 <a href="https://paulbowden673.github.io/Projects-MP-MP2-Quiz/" rel="nofollow" target="_blank">Click  here</a> to access the site.
 
-**I built this website to give users a fun and enjoyable game to play. I based the game on Health & Safety questions so it can also be used for training**
+
 ## UX ##
 **The main purpose of this full-stack MongoDB-based Flask project is to create a database of recipes that allows users to create, read, update and delete (CRUD) recipes. "Simply Food" gives an access to all the recipes in the database for non-registered users. At the same time, it gives the opportunity to create an account and benifit from having convenient access to all features of the website. Registered users can add new recipes, edit and delete their own ones, as well as edit their username and password or delete account.
 Simply Food is a simple way to view, create and store your recipes!
 Sign in, get inspired, contribute, cook and enjoy!**
 
 
-
-
-
-
-**I incorporated the following things in order for the target audience to have a great experience when visiting my website,**
-
-- A Home page with buttons to start the game and also view the game rules.
-- A rules section so users can learn how to play the game.
-- A highscores section so users can keep track of thier scores and complete against other users for the highest score.
-- A Contact form so users can contact me with feedback via EmailJS.
- 
   
 **USER STORIES**
 
 As a user, I want/expect:
 
-to view all the recipes without having to register
-to view all recipe details (including cuisine, meal and diet types, cooking time, servings, list of ingredients and directions)
-to see how many recipes are on the website
-to create my own account
-to add new recipes
-to edit my recipes
-to view a list of my recipes on a separate page and see how many recipes I've created
-to delete my recipes
-to log out any time and have the session terminated
-to change my current username
-to change my current password
-to delete my account and all recipes I've created
-to use the website from any device (laptop, tablet, mobile)
+- to view all the recipes without having to register
+- to view all recipe details (including cooking time, servings, list of ingredients and directions)
+- to create my own account
+- to add new recipes
+- to edit my recipes
+- to view a list of my recipes on a separate page and see how many recipes I've created
+- to delete my recipes
+- to log out any time and have the session terminated
+- to delete all recipes I've created
+- to use the website from any device (laptop, tablet, mobile)
 ## Design
     
    ### Colour Scheme
-   - The 3 main colours used on the site are Black, #571ce0 Blue and Red which are appropriate.
+   - The 3 main colours used on the site are #fff White, #f0f8ff Aliceblue which are appropriate.
    ### Typography
    - The Roboto font is the main font used throughout the whole site, with sans-serif as fallback in case the font does not load correctly. It is frequently used and easy to read. 
-   - The Merriweather Sans font is used for headings throughout the site, with sans-serif fallback in case the font does not load correctly, it is optimised for a bold display on modern web browsers. 
+
    
    ### Imagery
 
-- Background image taken from Pexels.com. Photo by Ash @ModernAfflatus
-- 404 page image taken from flaticon.com
+- Background image taken from Unslpash.com. Photo by Gaelle Marcel
 
 
 ## Wireframe Mock-ups 
@@ -63,31 +48,33 @@ These can be found at the following links
 - Responsive on all screen sizes
 - Interactive elements 
 
-### [Home Page](Https://github.com/PaulBowden673/Projects-MP-MP2/index.html)
+### [Home Page](Https://github.com/PaulBowden673/Projects-MP-MP3/index.html)
 
-- Navigation links for the Home page and Contact page.
-- Buttons to view the rules and highscores, restart the game and clear the high scores list.
-- Contact button to allow users to send feedback via EmailJS API
+- Navigation links for the Home page.
+- Catergory cards linking to recipes by category.
 
 #### Home
 <img src="https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/readme-images/home-page.png" alt="Home page" width="100%">
 
-#### Rules
+#### Login
 <img src="https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/readme-images/rules-page.png" alt="Rules Page" width="100%">
 
-#### Highscores
+#### Register
 <img src="https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/readme-images/highscores-page.png" alt="Highscores Page" width="100%">
 
-#### Contact
+#### Profile
 <img src="https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/readme-images/contact-page.png" alt="Contact Page" width="100%">
 
+### Recipes
 
-### [404 Page](Https://github.com/PaulBowden673/Projects-MP-MP2/quiz404.html)
+### Single Recipe 
+
+### Add Recipe
 
 - 404 Error page to direct user back to the home page.
 - Links to social media pages
 
-#### 404 Page
+#### Edit Recipe
 <img src="https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/readme-images/quiz404.png" alt="404 Page" width="100%">
 
 ## Technologies Used
@@ -96,11 +83,8 @@ GitPod - an online IDE for developing this project.
 Git - for version control.
 GitHub - for remotely storing project's code.
 PIP - for installation of necessary tools.
-GIMP2 - for editing, compressing and resizing images.
 Am I Responsive - for creation of the images in the readme file and checking responsiveness.
-Ezgit - to create gifs for README
-Imgur - to host gifs
-ImgBB - to host images used in README
+
 Front-End
 HTML - to build the foundation of the project.
 CSS - to create custom styles.
@@ -114,22 +98,21 @@ Werkzeug 0.16.1 - to generate and verify password hashing.
 Jinja 2.10.1 - templating language for Python, to display back-end data in HTML.
 Heroku - to host the project.
 Libraries
-Materialize 1.0.0 - main responsive modern front-end framework used for grid and responsivesness.
+Bootstrap 5 - main responsive modern front-end framework used for grid and responsivesness.
 Google Fonts - to import fonts.
 FontAwesome - to provide icons used across the project.
-Adorable Avatars - to create user avatars.
 JQuery 3.5.0 - to simplify DOM manipulation and to initialize Materialize functions.
 
 ## Future updates
 
-- Fetch questions from JSON file to allow questions to be changed without changing the code - struggled to be able to impliment this at this time.
-- Change the qustions so the answers are in a random order to avoid regular users knowing where the answers will be
-- Add more questions in  random order to give a better experience for returning users
-- Add futher sets of questions to make the game more challenging, such as Food Safety, Fire Safety, Licensing.
+- Update recipe datebase to hold arrays to give more scope to size of recipes - struggled to be able to impliment this at this time.
+- Add favourite recipes to profile page - ran out of time to impliment
+- Add way for users to add own recipe pictures
+- Add functionality to add more categories
 
 ## Testing
 All recipes and single recipe display
-When I click on "All Recipe page", I can see recipe cards displayed in rows, 8 recipes per page. In that view, I can see image, recipe name and short information about the recipe. Clicking on the recipe card redirects me to the single recipe page, where I can see all the detailed information about the recipe. I tested this functionality as a non-logged in (guest) user and a logged in user and it perfectly worked in both cases. I also can see the total number of the recipes in parentheses. I tried to add and delete some recipes, and this number changed accordingly.
+When I click on "All Recipe page", I can see recipe cards displayed. In that view, I can see image and  recipe name. Clicking on the recipe card redirects me to the single recipe page, where I can see all the detailed information about the recipe. I tested this functionality as a non-logged in (guest) user and a logged in user and it perfectly worked in both cases.
 
 Create a new user account
 I created my main account, as well as a few test accounts to test this functionality. Clicking on the "Register" button in the navbar opens the form, where I can put username and password to create a new account. I tried to input an existing username, not matching passwords in "password" and "confirm password" fields, and input less then 3 or more then 15 charachters. In all cases I got a corresponding flash error message. As well as that, I tried to leave an empty field and submit the form, but got an error message again asking to fill the field. When the form was successfully submitted, I was redirected to the home page, seeing a message that my new account was created. I also checked the link to the Login page at the bottom of the form, which worked well.
@@ -137,25 +120,19 @@ I created my main account, as well as a few test accounts to test this functiona
 Login
 Clicking on the "Login" button in the navbar opens the form, allowing me to login to my account. I tried to leave empty fields or input incorrect details, but I was not able to submit the form if something was entered incorrectly. After a successful login I was redirected to the home page, seeing the message that I was logged in. I also checked the link to the Register page at the bottom of the form, which worked well.
 
-Change username/password
-I changed my username and password multiple times to ensure that this functionality works well. Both pages open when the corresponding buttons are clicked. Validations against existing username and against incorrect input works well. In both forms I can see the flash messages about the changes I made. As well as that, If I click "Cancel" button, I will be redirected to the "Account Settings" page. For "change username" function, I checked database to make sure that username was updated there.
-
 Delete Account
 I deleted some testing accounts to test the functionality. Followed by clicking the "Delete account" button on the Account Settings page, the modal opens and I am asked to confirm the deletion by entering my password. I tried to put the wrong password, but got an error flash message. When I input the correct password, I am redirected to the home page and see the message that my account was deleted. Then, I checked the database to make sure that the account as well as all the recipes created by this user were removed.
 
 Add New Recipe
-I added plenty of test recipes to check the functionality throughout the development. If I leave some of the required fields empty, I will not be able to submit the form. I can see the flash messages displayed if my input does not meet length requirement. I also tried to create recipe without the URL image provided, to check if the placeholder is in place and it works well.
+I added plenty of test recipes to check the functionality throughout the development. If I leave some of the required fields empty, I will not be able to submit the form.  I also tried to create recipe without the URL image provided, to check if the placeholder is in place and it works well.
 
 Edit Recipe
-If I am the author of selected recipe, I can see the buttons "Edit" and "Delete" in the single_recipe page. I tried to view someone else's recipes and the buttons were not displayed. I also tried to change the link manually in the browser to edit other's recipe. However, I was not able to open the form and got the message, that I can only edit my own recipes, which means defensive design works well against brute forcing. Being the author of the recipe, I can view the form with pre-populated fields and can change anything that I want. If all fields are valid, I can see the changes I made in a Single Recipe Details Page after the submission. I tried to edit a number of recipes and edit different fields, everything worked correctly.
+If I am logged, I can see the buttons "Edit" and "Delete" in the single_recipe page. I tried to view someone else's recipes and the buttons were not displayed. I also tried to change the link manually in the browser to edit other's recipe. However, I was not able to open the form and got the message, that I can only edit my own recipes, which means defensive design works well against brute forcing. Being the author of the recipe, I can view the form with pre-populated fields and can change anything that I want. If all fields are valid, I can see the changes I made in a  Recipe Page after the submission. I tried to edit a number of recipes and edit different fields, everything worked correctly.
 
 Delete Recipe
-I deleted some dummy testing recipes to test the functionality. After clicking the "delete" button, I saw the modal showing up asking me to confirm the deletion. After clicking "Cancel" I was redirected back and modal closeed. After clicking "Delete" button in the modal, I was redirected to the home page and saw the message about the succsessful deletion.
+I deleted some dummy testing recipes to test the functionality. After clicking the "delete" button, I saw the modal showing up asking me to confirm the deletion. After clicking "Delete" button, I was redirected to the home page and saw the message about the succsessful deletion.
 Then I checked the database to make sure, that the recipe was removed. As well as that, I tested against brute-forcing, trying to delete another user's recipe(by changing the link manually in the browser), but wasn't able to do that.
 
-My Recipes
-The link in the navbar leads to the My Recipes page, where I can see the total number of my recipes, my recipe cards, "Add New Recipe" button and pagination in place. I tested pagination by clicking the buttons to switch pages, tested the "Add New Recipe" button that redirects to the corresponding form and tested total number change by creating/deleting a recipe. All functionality works well.
-    
 #### Devices
 
 - Samsung S9
