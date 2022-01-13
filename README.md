@@ -5,7 +5,9 @@
 
 **I built this website to give users a fun and enjoyable game to play. I based the game on Health & Safety questions so it can also be used for training**
 ## UX ##
-**The purpose of this project is to create an Interactive Frontend Website using HTML, CSS and JavaScript. In order to do this I have built a Health & Safety Quiz game, where the users have to answer 20 questions about general Workplace Health & Safety**
+**The main purpose of this full-stack MongoDB-based Flask project is to create a database of recipes that allows users to create, read, update and delete (CRUD) recipes. "Simply Food" gives an access to all the recipes in the database for non-registered users. At the same time, it gives the opportunity to create an account and benifit from having convenient access to all features of the website. Registered users can add new recipes, edit and delete their own ones, as well as edit their username and password or delete account.
+Simply Food is a simple way to view, create and store your recipes!
+Sign in, get inspired, contribute, cook and enjoy!**
 
 
 
@@ -22,25 +24,21 @@
   
 **USER STORIES**
 
-***First Time Visitor***
+As a user, I want/expect:
 
-1.  As a first time visitor, I want to easily understand the purpose of the site and learn how to play the game.
-2.  As a first time visitor, I want to find the game enjoyable and challenging.
-
-
-***Returning Visitor***
-
-1.  As a returning visitor, I want to still find the game enjoyable and challenging. 
-2.  As a returning visitor, I want to be able to see the highest scores and try to beat them.
-3.  As a returning visitor, I want to be able to give feedback on the quiz.
-
-
-***Frequent Visitor***
-
-1. As a frequent visitor, I want to still find the game enjoyable and challenging.
-2. As a frequent visitor, I want to be able to try to beat the highest scores.
-3. As a frequent visitor, I want to be able to give feedback on the quiz.
-
+to view all the recipes without having to register
+to view all recipe details (including cuisine, meal and diet types, cooking time, servings, list of ingredients and directions)
+to see how many recipes are on the website
+to create my own account
+to add new recipes
+to edit my recipes
+to view a list of my recipes on a separate page and see how many recipes I've created
+to delete my recipes
+to log out any time and have the session terminated
+to change my current username
+to change my current password
+to delete my account and all recipes I've created
+to use the website from any device (laptop, tablet, mobile)
 ## Design
     
    ### Colour Scheme
@@ -94,24 +92,33 @@ These can be found at the following links
 
 ## Technologies Used
 
-### Languages 
-
--  [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)  - This was used for the layout of the website.
--  [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)    - This was used to style the website.
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - THis was used to make the website interactive and make the quiz work.
-
-### Libraries 
-
- - [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) -  This was used to design a mobile-first responsive website layout quickly, also using components ( navigation bar, modal, form, footer)
-
- ### Tools
-
-- [Google Fonts](https://fonts.google.com/) - This was used for selecting the fonts for the website. 
-- [amiresponsive](http://ami.responsivedesign.is/) - This was used to check how responsive the site is on different devices.
-- [Gitpod](https://www.gitpod.io/) - Online IDE linked to GitHub repository, this was used to write my code.
-- [GitHub](https://github.com/) - This was used to store, host and deploy the project files, after being pushed from Gitpod.
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse) - This was used to audit My site for quality and to check responsiveness. 
-- [EmailJS](https://www.emailjs.com/) - This was used to send emails to the owner from the contact form contained in the quiz.
+GitPod - an online IDE for developing this project.
+Git - for version control.
+GitHub - for remotely storing project's code.
+PIP - for installation of necessary tools.
+GIMP2 - for editing, compressing and resizing images.
+Am I Responsive - for creation of the images in the readme file and checking responsiveness.
+Ezgit - to create gifs for README
+Imgur - to host gifs
+ImgBB - to host images used in README
+Front-End
+HTML - to build the foundation of the project.
+CSS - to create custom styles.
+Back-End
+Python 3.8.2 - back-end programming language used in this project.
+Flask 1.1.2 - microframework for building and rendering pages.
+MongoDB Atlas - NoSQL database for storing back-end data.
+PyMongo - for Python to get access the MongoDB database.
+WTForms 2.2.1 - for creating forms with validation.
+Werkzeug 0.16.1 - to generate and verify password hashing.
+Jinja 2.10.1 - templating language for Python, to display back-end data in HTML.
+Heroku - to host the project.
+Libraries
+Materialize 1.0.0 - main responsive modern front-end framework used for grid and responsivesness.
+Google Fonts - to import fonts.
+FontAwesome - to provide icons used across the project.
+Adorable Avatars - to create user avatars.
+JQuery 3.5.0 - to simplify DOM manipulation and to initialize Materialize functions.
 
 ## Future updates
 
