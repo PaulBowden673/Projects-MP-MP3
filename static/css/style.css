@@ -18,6 +18,15 @@
     text-align: center;
 }
 
+.category-img {
+    width: 16rem;
+    height: 12rem;
+}
+
+.category-body {
+    width: 16rem;
+    height: 4rem;
+}
 
 body {
     background-color: #fff;
