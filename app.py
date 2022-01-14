@@ -141,7 +141,7 @@ def add_recipe():
     if request.method == "POST":
         recipe_liked = "on" if request.form.get("recipe_liked") else "off"
         recipe = {
-            "recipe_category": request.form.get("recipe_category"),
+            "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_serving": request.form.get("recipe_serving"),
             "recipe_prep": request.form.get("recipe_prep"),
@@ -160,7 +160,7 @@ def add_recipe():
         flash("Recipe Successfully Added")
         return redirect(url_for("index"))
 
-    categories = mongo.db.categories.find().sort("recipe_category", 1)
+    categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
 
 
@@ -193,11 +193,33 @@ def edit_recipe(recipes_id):
             {"_id": ObjectId(recipes_id)}), categories=categories)
 
 
+# Delete Recipe
 @app.route("/delete_recipe/<recipes_id>")
 def delete_recipe(recipes_id):
-    mongo.db.recipes.recipes.delete_one({"_id": ObjectId(recipes_id)})
-    flash("Recipe Successfully Deleted")
-    return redirect(url_for("recipe_list"))
+    # prevents guest users from deleting recipes
+    if 'user' not in session:
+        flash('You must be logged in to delete a recipe!')
+        return redirect(url_for('index'))
+    user_in_session = mongo.db.users.find_one(
+        {'username': session['user']})
+    # get the selected recipe for filling the fields
+    selected_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    # allows only author of the recipe to delete it;
+    # protects againts brute-forcing
+    if selected_recipe['created_by'] == user_in_session["username"]:
+        mongo.db.recipes.find_one_and_delete({"_id": ObjectId(recipes_id)})
+        # find the author of the selected recipe
+        author = mongo.db.users.find_one(
+            {'username': session['user']})["username"]
+
+        mongo.db.users.update_one(
+            {"_id": ObjectId(author)}, {"$pull": {"created_by": ObjectId(
+                recipes_id)}})
+        flash('Your recipe has been deleted.')
+        return redirect(url_for("index"))
+    else:
+        flash("You can only delete your own recipes!")
+        return redirect(url_for('index'))
 
 
 if __name__ == "__main__":
