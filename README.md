@@ -157,9 +157,9 @@ Then I checked the database to make sure, that the recipe was removed and found 
 
 ## Issues/Bugs
 
-- Issue with recipe cards not displaying inline on All recipes page. Not sure how to fix
-- Issue with delete recipe not removing recipe from DB but showing Flash message 
-- Issue with add recipe not picking up category select option and writing to DB 
+- Issue with recipe cards not displaying inline on All recipes page. Not sure how to fix followed Bootstrap advice, but still showing on seperate rows
+- Issue with delete recipe completing request but slow to update on page 
+- Ran out of time to improve UX to a smoother experience. Would have used Materialize instead of Bootstrap but did not find it responsive during mini project.
 
 ### Validation
 
@@ -213,7 +213,7 @@ All files passed validation testing at
 
 ###### EmailJS.js
 
-![jsHint Validation Report EmailJS.js](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/JSHint%20validation%20emailJS.js.png)
+![jsHint Validation Report EmailJS.js](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/JSHint%20validation%20emailJS.js.pn
 ## Deployment
 ### Local Deployment
 To be able to run this project, the following tools have to be installed:
@@ -224,7 +224,7 @@ To be able to run this project, the following tools have to be installed:
 - [Python](https://www.python.org/)   
 #### Directions
 1. You can clone this repository directly into the editor of your choice by pasting the following command into the terminal:   
-`git clone https://github.com/irinatu17/MyCookBook`    
+`git clone https://github.com/PaulBowden673/Projects-MP-MP3`    
 Alternatively, you can save a copy of this repository by clicking the green button "Clone or download" , then "Download Zip" button, and after extract the Zip file to your folder.
 2. In the terminal window change directory (CD) to the correct file location (directory that you have just created).
 3. Set up environment variables:
@@ -237,45 +237,35 @@ Alternatively, you can save a copy of this repository by clicking the green butt
 4. Install all requirements from the **requirements.txt** file putting this command into your terminal:   
 `pip3 install -r requirements.txt`  
 *Note: GitPod does not require `sudo`, so if you use another IDE, you will need to include `sudo` in the beginning of the command: `sudo pip3 install -r requirements.txt`.*
-5. Create a new Database called "MyCookBook" in [MongoDB Atlas](https://www.mongodb.com/).   
+5. Create a new Database called "recipes" in [MongoDB Atlas](https://www.mongodb.com/).   
 *You can sign up for free account, if you do not have one.*
-6. In "MyCookBook" database create five following collections:
-###### Cuisines
-```
-_id: <ObjectId>
-cuisine_type: <String>
-```
-###### Meals
-```
-_id: <ObjectId>
-meal_type: <String>
-```
-###### Diets
-```
-_id: <ObjectId>
-diet_type: <String>
-```
+6. In "recipes" database create three following collections:
 ###### Users
 ```
 _id: <ObjectId>
 username: <String>
 password: <String>
-user_recipes: <Array>
 ```
 ###### Recipes
 ```
 _id: <ObjectId>
 recipe_name: <String>
-description: <String>
-cuisine_type: <String>
-meal_type: <String>
-cooking_time: <String>
-diet_type: <String>
-servings: <String>
-ingredients: <Array>
-directions: <Array>
-author: <ObjectId>
-image: <String>
+recipe_description: <String>
+recipe_serving: <String>
+recipe_prep: <String>
+recipe_cook: <String>
+recipe_ingredients1: <String>
+recipe_ingredients2: <String>
+recipe_ingredients3: <String>
+recipe_ingredients4: <String>
+recipe_ingredients5: <String>
+created_by: <ObjectId>
+recipe_liked: <String>
+```
+###### Categories
+```
+_id: <ObjectId>
+category_name: <String>
 ```
 7. You will now be able to run the application using the following command `python3 run.py`.   
 
@@ -310,24 +300,7 @@ To deploy the project to [Heroku](https://heroku.com/) the following steps need 
 
 I have borrowed code ideas and inspiration from the following sources during this project. This helped me to write my code and make my project work.
 
-- https://www.youtube.com/watch?v=f4fB9Xg2JEY&amp;t=3763s&amp;ab_channel=BrianDesignBrianDesign
-
-- https://github.com/jamesqquick/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript
-
-- https://www.lcn.com/blog/beginners-guide-custom-404-pages/
-
-- https://medium.com/nerd-for-tech/javascript-build-quiz-application-f6ee0a235417
-
-- https://codereview.stackexchange.com/questions/189399/quiz-app-from-a-json-file
-
 - CodeInstitute 
-
-### Media
-
-- Background image - www.Pexels.com. (Photo by Ash @ModernAfflatus)
-
-- 404 page image - www.flaticon.com
-
 
 ## Acknowledgements
 
