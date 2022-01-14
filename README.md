@@ -42,7 +42,10 @@ As a user, I want/expect:
 ## Wireframe Mock-ups 
 These can be found at the following links 
 
-- [Wireframe 3 screen sizes](/https://paulbowden673.github.io/Projects-MP-MP2-Quiz/assets/documents/wireframes/milestoneProject2Quiz.pdf)
+- [Wireframe 3 screen sizes](/https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/MileStone%203%20Project%20.pdf)
+
+## Flowchart
+- [Flowchart](/https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/flowchartMS3.drawio)
 
 ## Features
 
