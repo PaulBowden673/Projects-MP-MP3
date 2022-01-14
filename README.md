@@ -20,15 +20,16 @@ As a user, I want/expect:
 - to create my own account
 - to add new recipes
 - to edit my recipes
-- to view a list of my recipes on a separate page and see how many recipes I've created
 - to delete my recipes
 - to log out any time and have the session terminated
 - to delete all recipes I've created
 - to use the website from any device (laptop, tablet, mobile)
 ## Design
-    
+   
+   I wanted to keep the site simple and encourage less adventurous cooks to find recipes that were simple to make with few ingredients  
+   
    ### Colour Scheme
-   - The 3 main colours used on the site are #fff White, #f0f8ff Aliceblue which are appropriate.
+   - The 2 main colours used on the site are #fff White, #f0f8ff Aliceblue which keep the site looking fresh.
    ### Typography
    - The Roboto font is the main font used throughout the whole site, with sans-serif as fallback in case the font does not load correctly. It is frequently used and easy to read. 
 
@@ -46,11 +47,13 @@ These can be found at the following links
 ## Features
 
 - Responsive on all screen sizes
-- Interactive elements 
+- Interactive elements
+- Links to social media pages
+- Navigation links on all pages, limited options for non registered users 
 
 ### [Home Page](Https://github.com/PaulBowden673/Projects-MP-MP3/index.html)
 
-- Navigation links for the Home page.
+
 - Catergory cards linking to recipes by category.
 
 #### Home
@@ -71,8 +74,6 @@ These can be found at the following links
 
 ### Add Recipe
 
-- 404 Error page to direct user back to the home page.
-- Links to social media pages
 
 #### Edit Recipe
 <img src="https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/readme-images/quiz404.png" alt="404 Page" width="100%">
@@ -112,7 +113,7 @@ JQuery 3.5.0 - to simplify DOM manipulation and to initialize Materialize functi
 
 ## Testing
 All recipes and single recipe display
-When I click on "All Recipe page", I can see recipe cards displayed. In that view, I can see image and  recipe name. Clicking on the recipe card redirects me to the single recipe page, where I can see all the detailed information about the recipe. I tested this functionality as a non-logged in (guest) user and a logged in user and it perfectly worked in both cases.
+When I click on "Recipe page", I can see recipe cards displayed. In that view, I can see image and  recipe name. Clicking on the recipe card redirects me to the single recipe page, where I can see all the detailed information about the recipe. I tested this functionality as a non-logged in (guest) user and a logged in user and it perfectly worked in both cases.
 
 Create a new user account
 I created my main account, as well as a few test accounts to test this functionality. Clicking on the "Register" button in the navbar opens the form, where I can put username and password to create a new account. I tried to input an existing username, not matching passwords in "password" and "confirm password" fields, and input less then 3 or more then 15 charachters. In all cases I got a corresponding flash error message. As well as that, I tried to leave an empty field and submit the form, but got an error message again asking to fill the field. When the form was successfully submitted, I was redirected to the home page, seeing a message that my new account was created. I also checked the link to the Login page at the bottom of the form, which worked well.
@@ -124,14 +125,14 @@ Delete Account
 I deleted some testing accounts to test the functionality. Followed by clicking the "Delete account" button on the Account Settings page, the modal opens and I am asked to confirm the deletion by entering my password. I tried to put the wrong password, but got an error flash message. When I input the correct password, I am redirected to the home page and see the message that my account was deleted. Then, I checked the database to make sure that the account as well as all the recipes created by this user were removed.
 
 Add New Recipe
-I added plenty of test recipes to check the functionality throughout the development. If I leave some of the required fields empty, I will not be able to submit the form.  I also tried to create recipe without the URL image provided, to check if the placeholder is in place and it works well.
+I added plenty of test recipes to check the functionality throughout the development. If I leave some of the required fields empty, I will not be able to submit the form. THe functionality to add a photo of the recipe was not added at this stage and the recipe image displays a placeholder rather than an image ( images were added to test recipes when building the app, but ran out of time to impliment a way of users adding own recipe photos) 
 
 Edit Recipe
-If I am logged, I can see the buttons "Edit" and "Delete" in the single_recipe page. I tried to view someone else's recipes and the buttons were not displayed. I also tried to change the link manually in the browser to edit other's recipe. However, I was not able to open the form and got the message, that I can only edit my own recipes, which means defensive design works well against brute forcing. Being the author of the recipe, I can view the form with pre-populated fields and can change anything that I want. If all fields are valid, I can see the changes I made in a  Recipe Page after the submission. I tried to edit a number of recipes and edit different fields, everything worked correctly.
+If I am logged, I can see the buttons "Edit" and "Delete" in the single_recipe page.  I also tried to change the link manually in the browser to edit other's recipe. However, I was not able to open the form and got the message, that I can only edit my own recipes, which means defensive design works well against brute forcing. Being the creator of the recipe, {I can view the form with pre-populated fields and can change anything that I want. If all fields are valid, I can see the changes I made in a  Recipe Page after the submission. I tried to edit a number of recipes and edit different fields, everything worked correctly.}
 
 Delete Recipe
-I deleted some dummy testing recipes to test the functionality. After clicking the "delete" button, I saw the modal showing up asking me to confirm the deletion. After clicking "Delete" button, I was redirected to the home page and saw the message about the succsessful deletion.
-Then I checked the database to make sure, that the recipe was removed. As well as that, I tested against brute-forcing, trying to delete another user's recipe(by changing the link manually in the browser), but wasn't able to do that.
+I deleted some dummy testing recipes to test the functionality. After clicking the "delete" button,  I was redirected to the home page and saw the message about the succsessful deletion.
+Then I checked the database to make sure, that the recipe was removed and found an issue that the recipe was not removed from the app or the database
 
 #### Devices
 
@@ -151,22 +152,13 @@ Then I checked the database to make sure, that the recipe was removed. As well a
 
 ## Issues/Bugs
 
-- The score was showing the previous game score rather than the current game score. After investigation, I identified that the issue was in the script.js file. Once the game had ended the score was set to the local storage. The finalScore variable was then set to get the score from the local storage, this was getting the wrong score. To resolve the issue, I put the finalScore variable in the function that increments the score during the quiz and set it to return that score.After testing this more the issue was resolved.
+- Issue with recipe cards not displaying inline on All recipes page. Not sure how to fix
+- Issue with delete recipe not removing recipe from DB but showing Flash message 
+- Issue with add recipe not picking up category select option and writing to DB 
 
-- During testing I identified an issue in the main Quiz Game section. In the script.js file, any correct or incorrect answers selected by the user would have the relevant style class applied to change the colour, once the answer was selected, the answer button did not change to the relevant colour, instead the surrounding area in between the buttons would have the style class applied to change the colour. I identified that the style class was being applied to the parent element of the answer button which is the div containing all the answer buttons. The style class was applied to the div rather than the answer buttons. To fix the issue, I changed the code in the script.js to ensure the style class is applied to the answer buttons. Further testing was completed, and the answer buttons now correctly have the style applied.
-
-- An additional issue was identified within the main Quiz Game section. The answer buttons have a hover style applied, once the user selects the answer and the new class style is applied for correct or incorrect answer, the hover style was still in effect. if the user was still hovering over the answer button, they were not able to see whether the answer was correct or incorrect. This affected the UX of the quiz. To resolve the issue, I added additional style classes to separate the answer buttons from the other buttons. Then I added additional code in the script.js, when the user selects the answer the hover style would be removed from the button and the correct/incorrect style class applied. The hover style is now removed, and they are able to view whether the answer is correct or incorrect.
-
-- During testing an issue was found with the finish quiz modal that pops up once user has finished the game. The default behaviour for a modal is to close if mouse is clicked outside of the modal or if 'esc' is pressed on keyboard. This was causing an issue as the user was able to close the finish quiz modal and return back to the quiz game section. However, they would not be able to view the finish quiz modal again, and all the progress would be lost. The only way to exit the game would be to reload the webpage or select the 'Quit Game' button and return to the Home page. This identified issue would reduce the UX and functionality of the end game section. To resolve this issue, I added additional code to the script.js for the finish quiz modal as well as confirmation modals. This has improved the overall UX of the quiz game. Once the user is presented with the finish quiz modal, they can no longer close this without selecting one of the provided buttons. The user is also not able to close the additional confirmation modal without selecting one of the options. 
-
-- On mobile devices, a UX issue was identified with the hover style. Once the user clicked the button to select their answer, the answer would have the correct class applied to change colour. However, once the next question was presented the hover style was still applied to the last selected button. I moved the ans-btn:hover to a media query and this removed the highlighted question on mobile devices, but the answer text is changed to black. The issue is still present but not as noticable as it was previously.
 ### Validation
 
 All files passed validation testing at 
-
-
-
-- [HTML] - Issue with empty heading id=Progress-text due to it being filled by javascript during game to show progress.
 
  ###### HTML index.html page
 
