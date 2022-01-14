@@ -1,5 +1,5 @@
-<img src="https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/simplyfood.png" width="100%" alt="SimplyFood Recipe website>
 
+<img src="github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/simplyfood.png" width="100%" alt="SimplyFood Recipe website">
 
 <a href="https://simply-food-project.herokuapp.com/" rel="nofollow" target="_blank">Click  here</a> to access the site.
 
