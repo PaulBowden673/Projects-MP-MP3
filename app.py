@@ -169,7 +169,7 @@ def edit_recipe(recipes_id):
     if request.method == "POST":
         recipe_liked = "on" if request.form.get("recipe_liked") else "off"
         submit = {
-            "recipe_category": request.form.get("recipe_category"),
+            "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_serving": request.form.get("recipe_serving"),
             "recipe_prep": request.form.get("recipe_prep"),
@@ -187,10 +187,10 @@ def edit_recipe(recipes_id):
         mongo.db.recipes.update_one({"_id": ObjectId(recipes_id)}, submit)
         flash("Recipe Successfully Updated")
 
-    categories = mongo.db.categories.find().sort("recipe_category", 1)
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template(
-        "edit_recipe.html", edit_recipe=mongo.db.recipes.find_one(
-            {"_id": ObjectId(recipes_id)}), categories=categories)
+        "edit_recipe.html", recipe=recipe, categories=categories)
 
 
 # Delete Recipe

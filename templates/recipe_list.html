@@ -17,14 +17,14 @@
         </div>
     </form>
 </div>
-<div class="row">
+<div class="row row-cols-md-2 g-2 mt-2">
     {% for recipes in recipes %}
         <div class="col-sm-12 col-md-4 m-1">
             <div class="card rounded splash-card"> <a href="{{ url_for ('single_recipe', recipes_id=recipes._id) }}">
                     {% if recipes.recipe_image %}
                     <img src="{{ recipes.recipe_image }}" class="card-img-top" alt="">
                     {% else %}
-                    <img class="recipe-card-img card-img" src="../static/images/recipe_placeholder.jpg"
+                    <img class="recipe-card-img card-img-top" src="../static/images/recipe_placeholder.jpg"
                         class="card-img-top" alt="">
                     {% endif %}
                     <div class="card-body">
