@@ -66,7 +66,7 @@ These can be found at the following links
 <img src="https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/loginMS3.png" alt="Login Page" width="100%">
 
 #### Register
-<img src="https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/readme-images/highscores-page.png" alt="Register" width="100%">
+<img src="https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/registerMS3.png" alt="Register" width="100%">
 
 #### Profile
 <img src="https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/profileMS3.png" alt="Profile Page" width="100%">
