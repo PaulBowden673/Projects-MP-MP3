@@ -1,7 +1,7 @@
-<img src="https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/readme-images/quiz-responsive-image.png" width="100%" alt="Health & Safety Quiz">
 
+<img src="https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/simplyfood.png" width="100%" alt="SimplyFood Recipe website">
 
-<a href="https://paulbowden673.github.io/Projects-MP-MP2-Quiz/" rel="nofollow" target="_blank">Click  here</a> to access the site.
+<a href="https://simply-food-project.herokuapp.com/" rel="nofollow" target="_blank">Click  here</a> to access the site.
 
 
 ## UX ##
