@@ -185,21 +185,12 @@ All files passed validation testing at
 
  ###### Lighthouse Validation Desktop
  
-![Lighthouse Validation Desktop](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/Lightouse%20Report%20Desktop%20MP2%20Quiz.png)
+![Lighthouse Validation Desktop](https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/lighthouseDesktop.png)
 
 ###### Lighthouse Validation Mobile
 
-![Lighthouse Validation Mobile](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/Lighthouse%20Report%20Mobile%20MP2%20Quiz.png)
+![Lighthouse Validation Mobile](https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/lighthouseMobile.png)
 
-- [JSHint]
-
-###### Script.js
-
-![jsHint Validation Report](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/JSHint%20validation%20script.js.png)
-
-###### EmailJS.js
-
-![jsHint Validation Report EmailJS.js](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/JSHint%20validation%20emailJS.js.pn
 ## Deployment
 ### Local Deployment
 To be able to run this project, the following tools have to be installed:
