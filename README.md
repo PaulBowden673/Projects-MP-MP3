@@ -165,7 +165,7 @@ All files passed validation testing at
 
  ###### HTML index.html page
 
-  ![HTML Validation](https://validator.w3.org/nu/?doc=http%3A%2F%2Fsimply-food-project.herokuapp.com%2Findex)
+  ![HTML Validation](https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/htmlvalidation.png)
 
 - [CSS] - Issue with validating with Bootstrap. When validated as Direct Input no issues were found
 
@@ -173,11 +173,11 @@ All files passed validation testing at
  
  ###### By URL
  
-  ![CSS Validation style.c(https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fsimply-food-project.herokuapp.com%2Findex&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  ![CSS Validation style.css](https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/cssURLvalidation.png)
   
   ###### By Direct Input
   
-  ![CSS Validation Direct Input](https://jigsaw.w3.org/css-validator/validator)
+  ![CSS Validation Direct Input](https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/cssvalidation.png)
 
   
 
