@@ -165,11 +165,7 @@ All files passed validation testing at
 
  ###### HTML index.html page
 
-  ![HTML Validation](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/w3%20HTML%20Validation%20index.html.png)
-  
-  ###### HTML 404.html page
-  
-  ![HTML Validation](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/w3%20HTML%20Validation%20quiz404.html.png)
+  ![HTML Validation](https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/htmlvalidation.png)
 
 - [CSS] - Issue with validating with Bootstrap. When validated as Direct Input no issues were found
 
@@ -177,41 +173,24 @@ All files passed validation testing at
  
  ###### By URL
  
-  ![CSS Validation style.css](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/w3%20CSS%20validator%20style.css.png)
+  ![CSS Validation style.css](https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/cssURLvalidation.png)
   
   ###### By Direct Input
   
-  ![CSS Validation Direct Input](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/w3%20CSS%20validator%20style.css%20Direct%20Input.png)
+  ![CSS Validation Direct Input](https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/cssvalidation.png)
 
-  #### CSS 404Style.css
   
-  ###### By URL
-  
-  ![CSS Validation quiz404.css](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/w3%20CSS%20validator%20style404.css.png)
-
-  ###### By Direct Input
- 
-  ![CSS Validation Direct Input](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/w3%20CSS%20validator%20style404.css%20Direct%20Input.png)
 
 - [Lighthouse]
 
  ###### Lighthouse Validation Desktop
  
-![Lighthouse Validation Desktop](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/Lightouse%20Report%20Desktop%20MP2%20Quiz.png)
+![Lighthouse Validation Desktop](https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/lighthouseDesktop.png)
 
 ###### Lighthouse Validation Mobile
 
-![Lighthouse Validation Mobile](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/Lighthouse%20Report%20Mobile%20MP2%20Quiz.png)
+![Lighthouse Validation Mobile](https://github.com/PaulBowden673/Projects-MP-MP3/blob/main/static/documents/lighthouseMobile.png)
 
-- [JSHint]
-
-###### Script.js
-
-![jsHint Validation Report](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/JSHint%20validation%20script.js.png)
-
-###### EmailJS.js
-
-![jsHint Validation Report EmailJS.js](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/JSHint%20validation%20emailJS.js.pn
 ## Deployment
 ### Local Deployment
 To be able to run this project, the following tools have to be installed:
