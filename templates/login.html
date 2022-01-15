@@ -13,26 +13,20 @@
                         </div>
                         <div class="card-body">
                             <!-- username -->
-
                             <div class="form-control">
                                 <i class="fas fa-user-plus"></i>
                                 <label for="username" class="form-label text-muted"></label>
                                 <input id="username" name="username" type="text" placeholder="Username" minlength="5"
                                     maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-
                             </div>
-
                             <!-- password -->
-
                             <div class="form-control">
                                 <i class="fas fa-user-lock"></i>
                                 <label for="password" class="form-label text-muted"></label>
                                 <input id="password" name="password" type="password" placeholder="Password"
                                     minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate"
                                     required>
-
                             </div>
-
                             <!-- register -->
                             <div class="row p-3">
                                 <button type="submit" class="btn btn-primary">
@@ -40,7 +34,7 @@
                                 </button>
                                 <p class="text-center">
                                     Not  Registered?
-                                    <a href="{{ url_for('register') }}">Sign Up</a>
+                                    <a href="{{ url_for('register') }}">Sign Upgit </a>
                                 </p>
                             </div>
                         </div>
@@ -49,7 +43,4 @@
             </div>
         </div>
 </section>
-
-
-
 {% endblock %}

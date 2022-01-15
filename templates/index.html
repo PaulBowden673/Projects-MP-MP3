@@ -10,32 +10,33 @@
                     quick, tasty, simple meals (5 ingredients or less)
                 </p>
             </div>
-            <div class="row gap-5 splash-view"> 
+            <div class="row gap-5 splash-view">
                 <div class="card category-card mt-2 p-1 gap-2">
                     <a href="{{ url_for('breakfast') }}"><img src="static/images/flapjack.webp" class=" category-img"
-                            alt="...">
-                        <div class="card-body category-body">
-                            <h5 class="card-title">Breakfast</h5>
-                    </a>
+                            alt="..."> </a>
+                    <div class="card-body category-body">
+                        <h5 class="card-title">Breakfast</h5>
+
+                    </div>
                 </div>
-            </div>
-            <div class="card category-card p-1 mt-2 gap-2">
-                <a href="{{ url_for('lunch') }}"><img src="/static/images/cacio-e-Pepe.webp"
-                        class="card-img-top category-img" alt="...">
+                <div class="card category-card p-1 mt-2 gap-2">
+                    <a href="{{ url_for('lunch') }}"><img src="/static/images/cacio-e-Pepe.webp"
+                            class="card-img-top category-img" alt="..."> </a>
                     <div class="card-body category-body">
                         <h5 class="card-title">Lunch</h5>
-                </a>
-            </div>
-        </div>
 
-        <div class="card category-card p-1 mt-2 gap-2">
-            <a href="{{ url_for('dinner') }}"><img src="static/images/mackeral-hash.jpg"
-                    class="card-img-top category-img" alt="...">
-                <div class="card-body category-body">
-                    <h5 class="card-title">Dinner</h5>
-            </a>
-        </div>
-    </div>
+                    </div>
+                </div>
+
+                <div class="card category-card p-1 mt-2 gap-2">
+                    <a href="{{ url_for('dinner') }}"><img src="static/images/mackeral-hash.jpg"
+                            class="card-img-top category-img" alt="..."> </a>
+                    <div class="card-body category-body">
+
+                        <h5 class="card-title">Dinner</h5>
+
+                    </div>
+                </div>
 </section>
 <div class="text-center">
     <a class="btn btn-md btn-primary" href="{{ url_for('recipe_list') }}">All Recipes</a>
