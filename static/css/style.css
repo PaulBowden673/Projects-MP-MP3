@@ -131,7 +131,7 @@ main.container {
 
 .small {
     font-weight: 100;
-    font-style: 4px;
+    font-size: 10px;
 }
 
 @media screen and (max-width: 450px) {
