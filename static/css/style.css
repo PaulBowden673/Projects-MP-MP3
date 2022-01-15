@@ -18,7 +18,7 @@ body {
 }
 
 header {
-    
+
     width: 100vw;
 }
 
@@ -45,13 +45,12 @@ header {
 }
 
 .category-img {
-    width: 16rem;
+    width: 17rem;
     height: 12rem;
 }
 
-.category-body {
-    width: 16rem;
-    height: 4rem;
+.splash-view {
+    margin-left: 90px;
 }
 
 .info-view {
@@ -60,24 +59,28 @@ header {
 
 .info-card {
     width: 40vw;
-    height: 40vh;    
+    height: 40vh;
 }
 
 .splash-card {
-width: 15rem;
+    width: 15rem;
 
 }
 
-main.container-fluid {
-    padding:0%;
+main.container {
+    padding: 0%;
 }
 
 .info-row {
-    background-color: aliceblue;
+    background-color: #f0f8ff;
 }
 
 .card-body {
     background-color: #f0f8ff;
+}
+
+.card-footer {
+    background-color: #fff;
 }
 
 .recipe-view {
@@ -87,7 +90,7 @@ main.container-fluid {
 .recipe-card {
     width: 80vw;
     height: 70vh;
-    
+
 }
 
 .recipe-card-body {
@@ -102,10 +105,6 @@ main.container-fluid {
     width: 15rem;
 }
 
-.recipe-card-header {
-    font-size: 1rem;
-}
-
 .recipe-card-footer {
     padding-left: 0;
     padding-right: 0;
@@ -116,14 +115,15 @@ main.container-fluid {
 }
 
 .add-recipe {
-   font-size: small;
+    font-size: small;
 }
+
 .footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    height:10%;
+    height: 10%;
     background-color: red;
     color: white;
     text-align: center;
@@ -135,44 +135,71 @@ main.container-fluid {
 }
 
 @media screen and (max-width: 450px) {
+
     .card,
     .splash-card {
         width: 100vw;
         height: 100vh;
     }
-    
-.recipe-card-body {
-    width: 100vw;
-    height: 100vh;
-    overflow: auto;
-    font-size: 14px;
-}
 
-.recipe-card-img {
-    height: 40vw;
-    width: 60vw;
-}
+    .category-card {
+        width: 100vw;
+        overflow: hidden;
+    }
 
-.recipe-card-header {
-    text-align: center;
-}
+    .splash-view {
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
 
-.register-view {
-    padding: 0;
-}
+    .category-body {
+        width: 100vw;
+    }
 
-.register-form {
-    padding: 1px;
-}
-.register-card {
-    width: 95vw;
-    height: 40vh;
-    padding: 2px;
-}
+    .category-img {
+        width: 100vw;
+    }
 
-.register-footer {
-    padding: 1px;
-    margin-top: 5px;
-    width: 85vw;
-}
+    .recipe-card-body {
+        width: 100vw;
+        overflow: auto;
+        font-size: 12px;
+    }
+
+    .recipe-card {
+        text-align: center;
+    }
+
+    .recipe-card-img {
+        width: 100vw;
+    }
+
+    .register-view {
+        padding: 0;
+    }
+
+    .register-form {
+        padding: 1px;
+    }
+
+    .register-card {
+        width: 95vw;
+        height: 40vh;
+        padding: 2px;
+    }
+
+    .register-footer {
+        padding: 1px;
+        margin-top: 5px;
+        width: 85vw;
+    }
+
+    .list-group-item {
+        padding: 4px;
+    }
+
+    footer {
+        font-size: 8px;
+    }
 }

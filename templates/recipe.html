@@ -4,12 +4,12 @@
 
 
     <h3 class="text-center"> Recipes</h3>
-    <div class="container-fluid">
-        <div class="row ">
+    <div class="container p-0">
+        <div class="row">
             <div class="col p-0 offset-md-1">
                 <div class="recipe-card">
-                    <div class="recipe-card-body card-body">
-                        <div class="recipe-card-header card-header">
+                    <div class=" p-0">
+                        <div class="recipe-card-body card-body ">
                             {% if recipes.recipe_image %}
                             <h5><img class="recipe-card-img card-img" src="{{ recipes.recipe_image }}"
                                     class="card-img-top" alt="">
@@ -30,10 +30,11 @@
                                 <label class="form-check-label" for="flexSwitchCheckChecked"></label>
                             </div>
                             {% endif %}
-                            <p> {{recipes.recipe_category}}</p>
-                            <p>Serves: {{recipes.recipe_serving}}</p>
-                            <p>Prep time: {{recipes.recipe_prep}}</p>
-                            <p>Cook time: {{recipes.recipe_cook}}</p>
+                            <p class="m-1"> {{recipes.recipe_category}}</p>
+                            <p class="m-1">Serves: {{recipes.recipe_serving}}</p>
+                            <p class="m-1">Prep time: {{recipes.recipe_prep}} min</p>
+                            <p class="m-1">Prep time: {{recipes.recipe_prep}} min</p>
+                            <p class="m-1">Cook time: {{recipes.recipe_cook}} min</p>
                             <li class="list-group-item">{{recipes.recipe_ingredients1}}</li>
                             <li class="list-group-item">{{recipes.recipe_ingredients2}}</li>
                             <li class="list-group-item">{{recipes.recipe_ingredients3}}</li>
@@ -42,17 +43,14 @@
                             <div class="recipe-card-footer card-footer">
                                 <li class="list-group-item">{{recipes.recipe_method}}</li>
                             </div>
-
                         </div>
-                        
                     </div>
-                    <div class="text-center">
-                        <a class="btn btn-md btn-primary" href="{{ url_for('recipe_list')}}">Back</a>
-                        </div>
+                    <div class=" text-center">
+                        <a class="btn btn-sm btn-primary" href="{{ url_for('recipe_list')}}">Back</a>
+                    </div>
                 </div>
             </div>
-            
         </div>
-       
+    </div>
 </section>
 {% endblock %}
