@@ -165,11 +165,7 @@ All files passed validation testing at
 
  ###### HTML index.html page
 
-  ![HTML Validation](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/w3%20HTML%20Validation%20index.html.png)
-  
-  ###### HTML 404.html page
-  
-  ![HTML Validation](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/w3%20HTML%20Validation%20quiz404.html.png)
+  ![HTML Validation](https://validator.w3.org/nu/?doc=http%3A%2F%2Fsimply-food-project.herokuapp.com%2Findex)
 
 - [CSS] - Issue with validating with Bootstrap. When validated as Direct Input no issues were found
 
@@ -177,21 +173,13 @@ All files passed validation testing at
  
  ###### By URL
  
-  ![CSS Validation style.css](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/w3%20CSS%20validator%20style.css.png)
+  ![CSS Validation style.c(https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fsimply-food-project.herokuapp.com%2Findex&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
   
   ###### By Direct Input
   
-  ![CSS Validation Direct Input](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/w3%20CSS%20validator%20style.css%20Direct%20Input.png)
+  ![CSS Validation Direct Input](https://jigsaw.w3.org/css-validator/validator)
 
-  #### CSS 404Style.css
   
-  ###### By URL
-  
-  ![CSS Validation quiz404.css](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/w3%20CSS%20validator%20style404.css.png)
-
-  ###### By Direct Input
- 
-  ![CSS Validation Direct Input](https://github.com/PaulBowden673/Projects-MP-MP2-Quiz/blob/main/assets/documents/validation/w3%20CSS%20validator%20style404.css%20Direct%20Input.png)
 
 - [Lighthouse]
 
