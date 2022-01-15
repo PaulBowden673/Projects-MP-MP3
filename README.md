@@ -157,9 +157,7 @@ Then I checked the database to make sure, that the recipe was removed and found 
 
 ## Issues/Bugs
 
-- Issue with recipe cards not displaying inline on All recipes page. Not sure how to fix followed Bootstrap advice, but still showing on seperate rows
-- Issue with delete recipe completing request but slow to update on page 
-- Ran out of time to improve UX to a smoother experience. Would have used Materialize instead of Bootstrap but did not find it responsive during mini project.
+- 
 
 ### Validation
 
