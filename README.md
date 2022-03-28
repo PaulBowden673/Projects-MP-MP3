@@ -111,7 +111,7 @@ JQuery 3.5.0 - to simplify DOM manipulation and to initialize Materialize functi
 
 ## Future updates
 
-- Update recipe datebase to hold arrays to give more scope to size of recipes - struggled to be able to impliment this at this time.
+- Update recipe datebase to hold arrays to give more scope to size of recipes - This would remove the limit of 5 ingredients 
 - Add favourite recipes to profile page - ran out of time to impliment
 - Add way for users to add own recipe pictures
 - Add functionality to add more categories
@@ -130,14 +130,14 @@ Delete Account
 I deleted some testing accounts to test the functionality. Followed by clicking the "Delete account" button on the Account Settings page, the modal opens and I am asked to confirm the deletion by entering my password. I tried to put the wrong password, but got an error flash message. When I input the correct password, I am redirected to the home page and see the message that my account was deleted. Then, I checked the database to make sure that the account as well as all the recipes created by this user were removed.
 
 Add New Recipe
-I added plenty of test recipes to check the functionality throughout the development. If I leave some of the required fields empty, I will not be able to submit the form. THe functionality to add a photo of the recipe was not added at this stage and the recipe image displays a placeholder rather than an image ( images were added to test recipes when building the app, but ran out of time to impliment a way of users adding own recipe photos) 
+I added plenty of test recipes to check the functionality throughout the development. If I leave some of the required fields empty, I will not be able to submit the form. The functionality to add a photo of the recipe was not added at this stage and the recipe image displays a placeholder rather than an image ( images were added to test recipes when building the app, but ran out of time to impliment a way of users adding own recipe photos) 
 
 Edit Recipe
-If I am logged, I can see the buttons "Edit" and "Delete" in the single_recipe page.  I also tried to change the link manually in the browser to edit other's recipe. However, I was not able to open the form and got the message, that I can only edit my own recipes, which means defensive design works well against brute forcing. Being the creator of the recipe, {I can view the form with pre-populated fields and can change anything that I want. If all fields are valid, I can see the changes I made in a  Recipe Page after the submission. I tried to edit a number of recipes and edit different fields, everything worked correctly.}
+If I am logged, I can see the buttons "Edit" and "Delete" in the single_recipe page.  I also tried to change the link manually in the browser to edit other's recipe. However, I was not able to open the form and got the message, that I can only edit my own recipes, which means defensive design works well against brute forcing. Being the creator of the recipe, I can view the form with pre-populated fields and can change anything that I want. If all fields are valid, I can see the changes I made in a  Recipe Page after the submission. I tried to edit a number of recipes and edit different fields, everything worked correctly. Since the cluster paused on MongoDB there is a URL error that I have not been able to resolve. Which is not allowing the edit function to update the changes.
 
 Delete Recipe
-I deleted some dummy testing recipes to test the functionality. After clicking the "delete" button,  I was redirected to the home page and saw the message about the succsessful deletion.
-Then I checked the database to make sure, that the recipe was removed and found an issue that the recipe was not removed from the app or the database
+I deleted some dummy testing recipes to test the functionality. After clicking the "delete" button,  I was redirected to the home page and saw the message about the succsessful deletion. An error has appeared showing Internal server error but recipes are deleted 
+Then I checked the database to make sure, that the recipe was removed and found that the recipe was removed from the app and the database
 
 #### Devices
 
@@ -157,7 +157,7 @@ Then I checked the database to make sure, that the recipe was removed and found 
 
 ## Issues/Bugs
 
-- 
+- Issue with Delete and Edit functions since MogoDB Cluster paused. Delete now redirects to an internal server error page, but still deletes the Item. Edit is now showing an issue with URL and not allowing the database to update. I have not been able to resolve these issues at this time 
 
 ### Validation
 
