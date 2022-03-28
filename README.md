@@ -115,6 +115,7 @@ JQuery 3.5.0 - to simplify DOM manipulation and to initialize Materialize functi
 - Add favourite recipes to profile page - ran out of time to impliment
 - Add way for users to add own recipe pictures
 - Add functionality to add more categories
+- Improve small mobile device UX to give better user satisfaction
 
 ## Testing
 All recipes and single recipe display
@@ -157,7 +158,8 @@ Then I checked the database to make sure, that the recipe was removed and found 
 
 ## Issues/Bugs
 
-- Issue with Delete and Edit functions since MogoDB Cluster paused. Delete now redirects to an internal server error page, but still deletes the Item. Edit is now showing an issue with URL and not allowing the database to update. I have not been able to resolve these issues at this time 
+- Issue with Delete and Edit functions since MogoDB Cluster paused. Delete now redirects to an internal server error page, but still deletes the Item. Edit is now showing an issue with URL and not allowing the database to update. I have not been able to resolve these issues at this time.
+- Mobile UX is functional but the site works better on Desktop. This would be something I would look to refine in the future.
 
 ### Validation
 
