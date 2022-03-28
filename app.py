@@ -154,6 +154,7 @@ def add_recipe():
             "recipe_description": request.form.get("recipe_description"),
             "recipe_method": request.form.get("recipe_method"),
             "recipe_liked": recipe_liked,
+            "recipe_image": recipe_image,
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
@@ -164,11 +165,11 @@ def add_recipe():
     return render_template("add_recipe.html", categories=categories)
 
 
-@app.route("/edit_recipe/<recipes_id>", methods=["GET", "POST"])
-def edit_recipe(recipes_id):
+@app.route("/edit_recipe", methods=["GET", "POST"])
+def edit_recipe():
     if request.method == "POST":
         recipe_liked = "on" if request.form.get("recipe_liked") else "off"
-        submit = {
+        recipe = {
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_serving": request.form.get("recipe_serving"),
@@ -182,15 +183,15 @@ def edit_recipe(recipes_id):
             "recipe_description": request.form.get("recipe_description"),
             "recipe_method": request.form.get("recipe_method"),
             "recipe_liked": recipe_liked,
+            "recipe_image": recipe_image,
             "created_by": session["user"]
         }
-        mongo.db.recipes.update_one({"_id": ObjectId(recipes_id)}, submit)
-        flash("Recipe Successfully Updated")
+        mongo.db.recipes.update_one(recipe)
+        flash("Recipe Successfully Edited")
+        return redirect(url_for("index"))
 
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template(
-        "edit_recipe.html", recipe=recipe, categories=categories)
+    return render_template("edit_recipe.html", categories=categories)
 
 
 # Delete Recipe
