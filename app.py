@@ -154,7 +154,7 @@ def add_recipe():
             "recipe_description": request.form.get("recipe_description"),
             "recipe_method": request.form.get("recipe_method"),
             "recipe_liked": recipe_liked,
-            "recipe_image": recipe_image,
+            "recipe_image": request.form.get("recipe_image"),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
@@ -183,7 +183,7 @@ def edit_recipe():
             "recipe_description": request.form.get("recipe_description"),
             "recipe_method": request.form.get("recipe_method"),
             "recipe_liked": recipe_liked,
-            "recipe_image": recipe_image,
+            "recipe_image": request.form.get("recipe_image"),
             "created_by": session["user"]
         }
         mongo.db.recipes.update_one(recipe)
