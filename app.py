@@ -165,11 +165,11 @@ def add_recipe():
     return render_template("add_recipe.html", categories=categories)
 
 
-@app.route("/edit_recipe", methods=["GET", "POST"])
-def edit_recipe():
+@app.route("/edit_recipe/<recipes_id>", methods=["GET", "POST"])
+def edit_recipe(recipes_id):
     if request.method == "POST":
         recipe_liked = "on" if request.form.get("recipe_liked") else "off"
-        recipe = {
+        submit = {
             "category_name": request.form.get("category_name"),
             "recipe_name": request.form.get("recipe_name"),
             "recipe_serving": request.form.get("recipe_serving"),
@@ -186,12 +186,13 @@ def edit_recipe():
             "recipe_image": request.form.get("recipe_image"),
             "created_by": session["user"]
         }
-        mongo.db.recipes.update_one(recipe)
-        flash("Recipe Successfully Edited")
-        return redirect(url_for("index"))
+        mongo.db.recipes.update({"_id": ObjectId(recipes_id)}, submit)
+        flash("Recipe Successfully Updated")
 
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipes_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_recipe.html", categories=categories)
+    return render_template(
+        "edit_recipe.html", recipe=recipe, categories=categories)
 
 
 # Delete Recipe
